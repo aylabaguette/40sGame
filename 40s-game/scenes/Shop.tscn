@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d7otfdihf1ee"]
+
+[ext_resource type="Texture2D" uid="uid://buyudqqe76oda" path="res://sprites/shop/Backdrop.png" id="1_72jb3"]
+[ext_resource type="Script" path="res://scenes/shop.gd" id="1_v2lqu"]
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_v2lqu")
+
+[node name="Background shop" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(407.37, 323.5)
+scale = Vector2(6.77717, 6.39)
+texture = ExtResource("1_72jb3")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 19.0
+offset_right = 142.0
+offset_bottom = 127.0
+text = "SWITCH SCENE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
