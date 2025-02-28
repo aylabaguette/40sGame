@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://d7otfdihf1ee"]
+[gd_scene load_steps=5 format=3 uid="uid://d7otfdihf1ee"]
 
 [ext_resource type="Texture2D" uid="uid://buyudqqe76oda" path="res://sprites/shop/Backdrop.png" id="1_72jb3"]
 [ext_resource type="Script" path="res://scenes/shop.gd" id="1_v2lqu"]
+[ext_resource type="Texture2D" uid="uid://dnw401aomiw14" path="res://sprites/shop/Counter.png" id="3_05b3x"]
+[ext_resource type="Texture2D" uid="uid://clwfwiq2uw1vx" path="res://sprites/shop/Door.png" id="4_vcaxr"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_v2lqu")
@@ -18,5 +20,17 @@ offset_top = 19.0
 offset_right = 142.0
 offset_bottom = 127.0
 text = "SWITCH SCENE"
+
+[node name="Counter" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(452, 343)
+scale = Vector2(6.02, 6.02)
+texture = ExtResource("3_05b3x")
+
+[node name="Door" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(238, 365)
+scale = Vector2(4.14, 4.14)
+texture = ExtResource("4_vcaxr")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
