@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://gkkp38x5uoh5"]
+[gd_scene load_steps=10 format=3 uid="uid://gkkp38x5uoh5"]
 
 [ext_resource type="Script" path="res://scenes/kitchen.gd" id="1_wjto4"]
 [ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
+[ext_resource type="Texture2D" uid="uid://br7c6mch33g2a" path="res://sprites/kitchen/Dispenser.PNG" id="3_igrlo"]
+[ext_resource type="Texture2D" uid="uid://dqrfyppmuq80u" path="res://sprites/kitchen/Lids.PNG" id="4_c85uw"]
+[ext_resource type="Texture2D" uid="uid://dudmdjilkh1qy" path="res://sprites/kitchen/Lid (drag).PNG" id="5_o883t"]
+[ext_resource type="Texture2D" uid="uid://csy775ati26k7" path="res://sprites/kitchen/Menu.PNG" id="6_aoept"]
+[ext_resource type="Script" path="res://scenes/drinks.gd" id="7_vqlel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d48us"]
+size = Vector2(37, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bv3je"]
+size = Vector2(388.75, 358.75)
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_wjto4")
@@ -18,4 +29,50 @@ offset_right = 142.0
 offset_bottom = 127.0
 text = "SWITCH SCENE"
 
+[node name="Lid(drag)" type="Sprite2D" parent="."]
+position = Vector2(52, 283)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_o883t")
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(416, 349)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("6_aoept")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Dispenser right" type="Area2D" parent="Node2D"]
+position = Vector2(629, 372)
+
+[node name="rightButtonDispenser" type="CollisionShape2D" parent="Node2D/Dispenser right"]
+position = Vector2(124, 0)
+shape = SubResource("RectangleShape2D_d48us")
+
+[node name="Dispenser left" type="Area2D" parent="Node2D"]
+
+[node name="leftButtonDispenser" type="CollisionShape2D" parent="Node2D/Dispenser left"]
+position = Vector2(629, 372)
+shape = SubResource("RectangleShape2D_d48us")
+
+[node name="Dispenser" type="Sprite2D" parent="Node2D"]
+position = Vector2(423, 323)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("3_igrlo")
+
+[node name="Lids" type="Area2D" parent="."]
+position = Vector2(386, 322)
+scale = Vector2(0.4, 0.4)
+
+[node name="Lids" type="Sprite2D" parent="Lids"]
+texture = ExtResource("4_c85uw")
+
+[node name="Lids Shape" type="CollisionShape2D" parent="Lids"]
+position = Vector2(-709.375, 565.625)
+shape = SubResource("RectangleShape2D_bv3je")
+
+[node name="Drinks" type="Sprite2D" parent="."]
+script = ExtResource("7_vqlel")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_shape_entered" from="Node2D/Dispenser right" to="." method="_on_dispenser_right_mouse_shape_entered"]
+[connection signal="mouse_entered" from="Node2D/Dispenser left" to="." method="_on_dispenser_left_mouse_entered"]
