@@ -1,15 +1,13 @@
-extends Node2D
+extends Node
+#this is the signal bus script: holds global variables that can be accessed
+#by any node anywhere in the code. 
 
+signal levelledUp(next_level)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-#change scenes to the kitchen when the button is pressed
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Kitchen.tscn")

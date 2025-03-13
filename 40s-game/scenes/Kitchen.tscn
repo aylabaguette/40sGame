@@ -79,5 +79,5 @@ script = ExtResource("7_vqlel")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Node2D/Rightbutton" to="." method="_on_rightbutton_pressed"]
-[connection signal="pressed" from="Node2D/LeftButton" to="." method="_on_rightbutton_pressed"]
 [connection signal="pressed" from="Node2D/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="Node2D/LeftButton" to="." method="_on_rightbutton_pressed"]

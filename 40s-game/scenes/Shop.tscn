@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d7otfdihf1ee"]
+[gd_scene load_steps=11 format=3 uid="uid://d7otfdihf1ee"]
 
 [ext_resource type="Texture2D" uid="uid://buyudqqe76oda" path="res://sprites/shop/Backdrop.png" id="1_72jb3"]
 [ext_resource type="Script" path="res://scenes/shop.gd" id="1_v2lqu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://226vmje5xdkf" path="res://sprites/characters/Momo.PNG" id="6_g3rx4"]
 [ext_resource type="Texture2D" uid="uid://cmiv2bwaym08k" path="res://sprites/characters/Kyrat.PNG" id="7_gso0l"]
 [ext_resource type="Texture2D" uid="uid://bb667n3dtoqd7" path="res://sprites/characters/Emily.PNG" id="8_77h1o"]
+[ext_resource type="Script" path="res://scenes/level.gd" id="10_wg3wp"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_v2lqu")
@@ -32,40 +33,60 @@ position = Vector2(394, 306)
 scale = Vector2(6.8, 6.8)
 texture = ExtResource("4_vcaxr")
 
-[node name="Mabel" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(246, 394)
-scale = Vector2(0.37, 0.37)
-texture = ExtResource("4_pv6g3")
-
-[node name="BobFerguson" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(234, 373)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("5_4gh6d")
-
-[node name="Momo" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(150, 454)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_g3rx4")
-
-[node name="Kyrat" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(130, 494)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("7_gso0l")
-
-[node name="Emily" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(128, 437)
-scale = Vector2(0.28, 0.28)
-texture = ExtResource("8_77h1o")
-
 [node name="Counter" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(444, 333)
 scale = Vector2(6.2, 6.2)
 texture = ExtResource("3_05b3x")
+
+[node name="Character sprites" type="Node2D" parent="."]
+
+[node name="Emily" type="Sprite2D" parent="Character sprites"]
+visible = false
+position = Vector2(128, 437)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("8_77h1o")
+
+[node name="Kyrat" type="Sprite2D" parent="Character sprites"]
+visible = false
+position = Vector2(130, 494)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_gso0l")
+
+[node name="Momo" type="Sprite2D" parent="Character sprites"]
+visible = false
+position = Vector2(150, 454)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_g3rx4")
+
+[node name="BobFerguson" type="Sprite2D" parent="Character sprites"]
+visible = false
+position = Vector2(234, 373)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("5_4gh6d")
+
+[node name="Mabel" type="Sprite2D" parent="Character sprites"]
+visible = false
+position = Vector2(246, 394)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("4_pv6g3")
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Level" type="Label" parent="UI"]
+offset_left = 469.0
+offset_top = 24.0
+offset_right = 509.0
+offset_bottom = 47.0
+text = "You are at level X
+X more drinks until level up"
+script = ExtResource("10_wg3wp")
+
+[node name="Days" type="Label" parent="UI"]
+offset_left = 185.0
+offset_top = 22.0
+offset_right = 349.0
+offset_bottom = 45.0
+text = "Day X since opening!!"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
