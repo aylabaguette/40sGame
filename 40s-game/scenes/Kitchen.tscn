@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://gkkp38x5uoh5"]
+[gd_scene load_steps=11 format=3 uid="uid://gkkp38x5uoh5"]
 
 [ext_resource type="Script" path="res://scenes/kitchen.gd" id="1_wjto4"]
 [ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
 [ext_resource type="Texture2D" uid="uid://br7c6mch33g2a" path="res://sprites/kitchen/Dispenser.PNG" id="3_igrlo"]
 [ext_resource type="Texture2D" uid="uid://dqrfyppmuq80u" path="res://sprites/kitchen/Lids.PNG" id="4_c85uw"]
+[ext_resource type="Script" path="res://scenes/dispenser.gd" id="5_bdred"]
 [ext_resource type="Texture2D" uid="uid://c8tsmx6qthl1" path="res://sprites/toppings/coffee.PNG" id="5_cj8jx"]
 [ext_resource type="Texture2D" uid="uid://dudmdjilkh1qy" path="res://sprites/kitchen/Lid (drag).PNG" id="5_o883t"]
 [ext_resource type="Texture2D" uid="uid://csy775ati26k7" path="res://sprites/kitchen/Menu.PNG" id="6_aoept"]
@@ -37,31 +38,32 @@ position = Vector2(416, 349)
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("6_aoept")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Dispenser" type="Node2D" parent="."]
+script = ExtResource("5_bdred")
 
-[node name="Drink Option" type="Sprite2D" parent="Node2D"]
-position = Vector2(800, 524)
-scale = Vector2(0.24, 0.24)
+[node name="Dispenser" type="Sprite2D" parent="Dispenser"]
+position = Vector2(423, 323)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("3_igrlo")
+
+[node name="Drink Option" type="Sprite2D" parent="Dispenser/Dispenser"]
+position = Vector2(919.512, 490.244)
+scale = Vector2(0.585366, 0.585366)
 texture = ExtResource("5_cj8jx")
 
-[node name="Rightbutton" type="Button" parent="Node2D"]
+[node name="Rightbutton" type="Button" parent="Dispenser"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 734.0
 offset_top = 351.0
 offset_right = 772.0
 offset_bottom = 393.0
 
-[node name="LeftButton" type="Button" parent="Node2D"]
+[node name="LeftButton" type="Button" parent="Dispenser"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 608.0
 offset_top = 350.0
 offset_right = 653.0
 offset_bottom = 393.0
-
-[node name="Dispenser" type="Sprite2D" parent="Node2D"]
-position = Vector2(423, 323)
-scale = Vector2(0.41, 0.41)
-texture = ExtResource("3_igrlo")
 
 [node name="Lids" type="Area2D" parent="."]
 position = Vector2(386, 322)
@@ -78,6 +80,5 @@ shape = SubResource("RectangleShape2D_bv3je")
 script = ExtResource("7_vqlel")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Node2D/Rightbutton" to="." method="_on_rightbutton_pressed"]
-[connection signal="pressed" from="Node2D/LeftButton" to="." method="_on_left_button_pressed"]
-[connection signal="pressed" from="Node2D/LeftButton" to="." method="_on_rightbutton_pressed"]
+[connection signal="pressed" from="Dispenser/Rightbutton" to="Dispenser" method="_on_rightbutton_pressed"]
+[connection signal="pressed" from="Dispenser/LeftButton" to="Dispenser" method="_on_left_button_pressed"]
