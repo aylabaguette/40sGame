@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4gveec0li0tx"
-path="res://.godot/imported/lemon.PNG-f66fca0ee67b7693b87e63ca44f40f21.ctex"
+uid="uid://cv425jo7jjq6l"
+path="res://.godot/imported/brownsugarLiquid.png-a91943cdce3ec8355ea409aa6a931789.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/toppings/lemon.PNG"
-dest_files=["res://.godot/imported/lemon.PNG-f66fca0ee67b7693b87e63ca44f40f21.ctex"]
+source_file="res://sprites/kitchen/Liquid/brownsugarLiquid.png"
+dest_files=["res://.godot/imported/brownsugarLiquid.png-a91943cdce3ec8355ea409aa6a931789.ctex"]
 
 [params]
 

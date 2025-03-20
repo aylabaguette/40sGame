@@ -1,12 +1,12 @@
 extends Node2D
 
 #preload pngs for drink options
-const COFFEE = preload("res://sprites/toppings/coffee.PNG")
-const BROWN_SUGAR = preload("res://sprites/toppings/brown sugar.PNG")
-const LEMON = preload("res://sprites/toppings/lemon.PNG")
-const MANGO = preload("res://sprites/toppings/mango.PNG")
-const MATCHA = preload("res://sprites/toppings/matcha.PNG")
-const PASSION_FRUIT = preload("res://sprites/toppings/passion fruit.PNG")
+const BROWN_SUGAR = preload("res://sprites/kitchen/toppings - dispenser/brown sugar.PNG")
+const COFFEE = preload("res://sprites/kitchen/toppings - dispenser/coffee.PNG")
+const LEMON = preload("res://sprites/kitchen/toppings - dispenser/lemon.PNG")
+const MANGO = preload("res://sprites/kitchen/toppings - dispenser/mango.PNG")
+const MATCHA = preload("res://sprites/kitchen/toppings - dispenser/matcha.PNG")
+const PASSION_FRUIT = preload("res://sprites/kitchen/toppings - dispenser/passion fruit.PNG")
 
 #reference to sprite drink option: holds the pngs of drinks 
 @onready var drink_option: Sprite2D = $"Dispenser/Drink Option"

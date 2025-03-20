@@ -1,17 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://gkkp38x5uoh5"]
+[gd_scene load_steps=14 format=3 uid="uid://gkkp38x5uoh5"]
 
-[ext_resource type="Script" path="res://scenes/kitchen.gd" id="1_wjto4"]
+[ext_resource type="Script" path="res://scripts/kitchen.gd" id="1_wjto4"]
 [ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
 [ext_resource type="Texture2D" uid="uid://br7c6mch33g2a" path="res://sprites/kitchen/Dispenser.PNG" id="3_igrlo"]
 [ext_resource type="Texture2D" uid="uid://dqrfyppmuq80u" path="res://sprites/kitchen/Lids.PNG" id="4_c85uw"]
-[ext_resource type="Script" path="res://scenes/dispenser.gd" id="5_bdred"]
-[ext_resource type="Texture2D" uid="uid://c8tsmx6qthl1" path="res://sprites/toppings/coffee.PNG" id="5_cj8jx"]
+[ext_resource type="Script" path="res://scripts/dispenser.gd" id="5_bdred"]
+[ext_resource type="Texture2D" uid="uid://c8tsmx6qthl1" path="res://sprites/kitchen/toppings - dispenser/coffee.PNG" id="5_cj8jx"]
 [ext_resource type="Texture2D" uid="uid://dudmdjilkh1qy" path="res://sprites/kitchen/Lid (drag).PNG" id="5_o883t"]
 [ext_resource type="Texture2D" uid="uid://csy775ati26k7" path="res://sprites/kitchen/Menu.PNG" id="6_aoept"]
-[ext_resource type="Script" path="res://scenes/drinks.gd" id="7_vqlel"]
+[ext_resource type="Script" path="res://scripts/drinks.gd" id="7_vqlel"]
+[ext_resource type="Texture2D" uid="uid://bj0vn7axdv5o3" path="res://sprites/cups/cup.png" id="10_uhls2"]
+[ext_resource type="Script" path="res://scenes/cup.gd" id="11_7e8gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bv3je"]
 size = Vector2(388.75, 358.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kppjn"]
+size = Vector2(14.3677, 13.7383)
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_wjto4")
@@ -58,6 +63,13 @@ offset_top = 351.0
 offset_right = 772.0
 offset_bottom = 393.0
 
+[node name="DispenseButton" type="Button" parent="Dispenser"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 660.0
+offset_top = 344.0
+offset_right = 722.0
+offset_bottom = 398.0
+
 [node name="LeftButton" type="Button" parent="Dispenser"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 608.0
@@ -79,6 +91,22 @@ shape = SubResource("RectangleShape2D_bv3je")
 [node name="Drinks" type="Sprite2D" parent="."]
 script = ExtResource("7_vqlel")
 
+[node name="Cup" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(320.8, 513.75)
+scale = Vector2(8.01333, 8.025)
+texture = ExtResource("10_uhls2")
+script = ExtResource("11_7e8gx")
+
+[node name="Area2D" type="Area2D" parent="Cup"]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cup/Area2D"]
+position = Vector2(-0.669716, 5.49844)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_kppjn")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Dispenser/Rightbutton" to="Dispenser" method="_on_rightbutton_pressed"]
 [connection signal="pressed" from="Dispenser/LeftButton" to="Dispenser" method="_on_left_button_pressed"]
+[connection signal="mouse_entered" from="Cup/Area2D" to="Cup" method="_on_area_2d_mouse_entered"]

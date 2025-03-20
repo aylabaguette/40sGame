@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8tsmx6qthl1"
-path="res://.godot/imported/coffee.PNG-eb78314b4b30e00315da4367627b146b.ctex"
+uid="uid://rqlsgo4kwfj6"
+path="res://.godot/imported/lemonLiquid.png-72bd784abb3592e181f14714ce6b8aa3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/toppings/coffee.PNG"
-dest_files=["res://.godot/imported/coffee.PNG-eb78314b4b30e00315da4367627b146b.ctex"]
+source_file="res://sprites/kitchen/Liquid/lemonLiquid.png"
+dest_files=["res://.godot/imported/lemonLiquid.png-72bd784abb3592e181f14714ce6b8aa3.ctex"]
 
 [params]
 

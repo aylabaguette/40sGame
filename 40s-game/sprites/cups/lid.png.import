@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4iks0iarvwfd"
-path="res://.godot/imported/matcha.PNG-7935253f96f5d520482b91c8755d3aa3.ctex"
+uid="uid://mkt5p5mqnrs7"
+path="res://.godot/imported/lid.png-bce7deb4b94e395595e7f589d79389c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/toppings/matcha.PNG"
-dest_files=["res://.godot/imported/matcha.PNG-7935253f96f5d520482b91c8755d3aa3.ctex"]
+source_file="res://sprites/cups/lid.png"
+dest_files=["res://.godot/imported/lid.png-bce7deb4b94e395595e7f589d79389c8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3a4tvsawi4av"
-path="res://.godot/imported/brown sugar.PNG-3572a494068c44a315dabc80c429bb7d.ctex"
+uid="uid://ik01c45sp5ql"
+path="res://.godot/imported/mangoLiquid.png-a543d811118c86ab90822c0b7b0f770a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/toppings/brown sugar.PNG"
-dest_files=["res://.godot/imported/brown sugar.PNG-3572a494068c44a315dabc80c429bb7d.ctex"]
+source_file="res://sprites/kitchen/Liquid/mangoLiquid.png"
+dest_files=["res://.godot/imported/mangoLiquid.png-a543d811118c86ab90822c0b7b0f770a.ctex"]
 
 [params]
 
