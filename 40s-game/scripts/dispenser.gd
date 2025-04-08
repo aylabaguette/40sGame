@@ -31,6 +31,8 @@ func _process(delta: float) -> void:
 #called when the signal level up is emitted 
 func onLevelUp(newLevel):
 	print(newLevel)
+	
+
 
 func _on_left_button_pressed() -> void:
 	#same as other just for left
@@ -51,3 +53,7 @@ func _on_rightbutton_pressed() -> void:
 		currentDrinkOption = unlockedDrinks[0]
 	else:
 		currentDrinkOption = unlockedDrinks[arrayIndex+1]
+
+
+func _on_dispenser_area_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	pass # Replace with function body.
