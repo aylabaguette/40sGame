@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d7otfdihf1ee"]
+[gd_scene load_steps=13 format=3 uid="uid://d7otfdihf1ee"]
 
 [ext_resource type="Texture2D" uid="uid://buyudqqe76oda" path="res://sprites/shop/Backdrop.png" id="1_72jb3"]
 [ext_resource type="Script" path="res://scripts/shop.gd" id="1_v2lqu"]
@@ -6,10 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dau526nnbxysi" path="res://sprites/characters/Mabel.PNG" id="4_pv6g3"]
 [ext_resource type="Texture2D" uid="uid://clwfwiq2uw1vx" path="res://sprites/shop/Door.png" id="4_vcaxr"]
 [ext_resource type="Texture2D" uid="uid://cjrfunaxpsd1y" path="res://sprites/characters/Bob Ferguson.PNG" id="5_4gh6d"]
+[ext_resource type="Script" path="res://scenes/character.gd" id="5_w06dj"]
 [ext_resource type="Texture2D" uid="uid://226vmje5xdkf" path="res://sprites/characters/Momo.PNG" id="6_g3rx4"]
 [ext_resource type="Texture2D" uid="uid://cmiv2bwaym08k" path="res://sprites/characters/Kyrat.PNG" id="7_gso0l"]
 [ext_resource type="Texture2D" uid="uid://bb667n3dtoqd7" path="res://sprites/characters/Emily.PNG" id="8_77h1o"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="10_wg3wp"]
+[ext_resource type="Script" path="res://scenes/SpeechBubble.gd" id="12_lljb8"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_v2lqu")
@@ -40,6 +42,9 @@ scale = Vector2(6.2, 6.2)
 texture = ExtResource("3_05b3x")
 
 [node name="Character sprites" type="Node2D" parent="."]
+
+[node name="character" type="Node2D" parent="Character sprites"]
+script = ExtResource("5_w06dj")
 
 [node name="Emily" type="Sprite2D" parent="Character sprites"]
 visible = false
@@ -88,5 +93,19 @@ offset_top = 22.0
 offset_right = 349.0
 offset_bottom = 45.0
 text = "Day X since opening!!"
+
+[node name="SpeechBubble" type="Node2D" parent="."]
+script = ExtResource("12_lljb8")
+
+[node name="Panel" type="Panel" parent="SpeechBubble"]
+offset_left = 438.0
+offset_top = 98.0
+offset_right = 747.0
+offset_bottom = 210.0
+
+[node name="Label" type="Label" parent="SpeechBubble/Panel"]
+layout_mode = 0
+offset_right = 308.0
+offset_bottom = 111.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
