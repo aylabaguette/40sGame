@@ -25,6 +25,10 @@ window/size/viewport_width=815
 window/size/mode=3
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="40S game"
+
 [input]
 
 "mouse click"={
