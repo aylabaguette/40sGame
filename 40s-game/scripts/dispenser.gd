@@ -21,6 +21,8 @@ const PASSIONFRUIT_LIQUID = preload("res://sprites/kitchen/Liquid/passionfruitLi
 @onready var drink_option: Sprite2D = $"Dispenser/Drink Option"
 var currentDrinkOption = COFFEE
 
+@onready var drink_liquid: Sprite2D = $"../Cup/drinkLiquid"
+
 @onready var area_2d_cup: Area2D = $"../Cup/Area2DCup"
 var cupEntered = false 
 
@@ -78,4 +80,7 @@ func _on_dispenser_area_area_exited(area: Area2D) -> void:
 
 func _on_dispense_button_pressed() -> void:
 	if(cupEntered == true):
-		pass
+		var drinkIndex = unlockedDrinks.find(currentDrinkOption)
+		var liquidSprite = unlockedDrinksLiquid[drinkIndex]
+		drink_liquid.texture = liquidSprite
+		drink_liquid.visible = true 

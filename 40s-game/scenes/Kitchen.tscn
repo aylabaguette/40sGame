@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://gkkp38x5uoh5"]
+[gd_scene load_steps=16 format=3 uid="uid://gkkp38x5uoh5"]
 
 [ext_resource type="Script" path="res://scripts/kitchen.gd" id="1_wjto4"]
 [ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/drinks.gd" id="7_vqlel"]
 [ext_resource type="Texture2D" uid="uid://bj0vn7axdv5o3" path="res://sprites/cups/cup.png" id="10_uhls2"]
 [ext_resource type="Script" path="res://scenes/cup.gd" id="11_7e8gx"]
+[ext_resource type="Texture2D" uid="uid://wrxsbrjcan1h" path="res://sprites/kitchen/Liquid/coffeeLiquid.png" id="12_4y6ao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvqij"]
 size = Vector2(111, 145)
@@ -114,7 +115,10 @@ script = ExtResource("11_7e8gx")
 position = Vector2(-0.669716, 5.49844)
 shape = SubResource("RectangleShape2D_kppjn")
 
-[node name="Sprite2D" type="Sprite2D" parent="Cup"]
+[node name="drinkLiquid" type="Sprite2D" parent="Cup"]
+visible = false
+modulate = Color(1, 0.952941, 1, 1)
+texture = ExtResource("12_4y6ao")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Dispenser/Rightbutton" to="Dispenser" method="_on_rightbutton_pressed"]
