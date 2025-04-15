@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://scenes/cup.gd" id="11_7e8gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvqij"]
-size = Vector2(111, 72)
+size = Vector2(111, 145)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bv3je"]
 size = Vector2(388.75, 358.75)
@@ -84,7 +84,7 @@ offset_bottom = 393.0
 position = Vector2(608, 350)
 
 [node name="DispenserShape" type="CollisionShape2D" parent="Dispenser/DispenserArea"]
-position = Vector2(84.5, 218)
+position = Vector2(84.5, 181.5)
 shape = SubResource("RectangleShape2D_cvqij")
 
 [node name="Lids" type="Area2D" parent="."]
@@ -108,15 +108,20 @@ scale = Vector2(8.01333, 8.025)
 texture = ExtResource("10_uhls2")
 script = ExtResource("11_7e8gx")
 
-[node name="Area2D" type="Area2D" parent="Cup"]
+[node name="Liquid" type="Sprite2D" parent="Cup"]
+scale = Vector2(1, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cup/Area2D"]
+[node name="Area2DCup" type="Area2D" parent="Cup" groups=["cup"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cup/Area2DCup"]
 position = Vector2(-0.669716, 5.49844)
 shape = SubResource("RectangleShape2D_kppjn")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Dispenser/Rightbutton" to="Dispenser" method="_on_rightbutton_pressed"]
+[connection signal="pressed" from="Dispenser/DispenseButton" to="Dispenser" method="_on_dispense_button_pressed"]
 [connection signal="pressed" from="Dispenser/LeftButton" to="Dispenser" method="_on_left_button_pressed"]
-[connection signal="area_shape_entered" from="Dispenser/DispenserArea" to="Dispenser" method="_on_dispenser_area_area_shape_entered"]
-[connection signal="mouse_entered" from="Cup/Area2D" to="Cup" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Cup/Area2D" to="Cup" method="_on_area_2d_mouse_exited"]
+[connection signal="area_entered" from="Dispenser/DispenserArea" to="Dispenser" method="_on_dispenser_area_area_entered"]
+[connection signal="area_exited" from="Dispenser/DispenserArea" to="Dispenser" method="_on_dispenser_area_area_exited"]
+[connection signal="mouse_entered" from="Cup/Area2DCup" to="Cup" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Cup/Area2DCup" to="Cup" method="_on_area_2d_mouse_exited"]

@@ -8,13 +8,28 @@ const MANGO = preload("res://sprites/kitchen/toppings - dispenser/mango.PNG")
 const MATCHA = preload("res://sprites/kitchen/toppings - dispenser/matcha.PNG")
 const PASSION_FRUIT = preload("res://sprites/kitchen/toppings - dispenser/passion fruit.PNG")
 
+const BROWNSUGAR_LIQUID = preload("res://sprites/kitchen/Liquid/brownsugarLiquid.png")
+const COFFEE_LIQUID = preload("res://sprites/kitchen/Liquid/coffeeLiquid.png")
+const LEMON_LIQUID = preload("res://sprites/kitchen/Liquid/lemonLiquid.png")
+const MANGO_LIQUID = preload("res://sprites/kitchen/Liquid/mangoLiquid.png")
+const MATCHA_LIQUID = preload("res://sprites/kitchen/Liquid/matchaLiquid.png")
+const PASSIONFRUIT_LIQUID = preload("res://sprites/kitchen/Liquid/passionfruitLiquid.png")
+
+@onready var dispense_button: Button = $DispenseButton
+
 #reference to sprite drink option: holds the pngs of drinks 
 @onready var drink_option: Sprite2D = $"Dispenser/Drink Option"
 var currentDrinkOption = COFFEE
 
+@onready var area_2d_cup: Area2D = $"../Cup/Area2DCup"
+var cupEntered = false 
+
 #need to change these: arrays for drink options
 var unlockedDrinks = [COFFEE,BROWN_SUGAR,LEMON,MANGO,MATCHA,PASSION_FRUIT]
 var totalDrinks = []
+
+var unlockedDrinksLiquid = [BROWNSUGAR_LIQUID,COFFEE_LIQUID,LEMON_LIQUID,MANGO_LIQUID,MATCHA_LIQUID,PASSIONFRUIT_LIQUID]
+var totalDrinksLiquid = []
 
 var unlockedToppings = []
 var totalToppings = []
@@ -23,17 +38,15 @@ var totalToppings = []
 func _ready() -> void:
 	#get reference to signal levelledUp
 	SignalBus.levelledUp.connect(onLevelUp)
-
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	drink_option.texture = currentDrinkOption
-
+	
 #called when the signal level up is emitted 
 func onLevelUp(newLevel):
 	print(newLevel)
 	
-
-
 func _on_left_button_pressed() -> void:
 	#same as other just for left
 	print("button working")
@@ -53,7 +66,16 @@ func _on_rightbutton_pressed() -> void:
 		currentDrinkOption = unlockedDrinks[0]
 	else:
 		currentDrinkOption = unlockedDrinks[arrayIndex+1]
+	
+func _on_dispenser_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("cup"):
+		cupEntered = true 
+		
+func _on_dispenser_area_area_exited(area: Area2D) -> void:
+	if area.is_in_group("cup"):
+		cupEntered = false
+		print(cupEntered)
 
-
-func _on_dispenser_area_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	pass # Replace with function body.
+func _on_dispense_button_pressed() -> void:
+	if(cupEntered == true):
+		pass

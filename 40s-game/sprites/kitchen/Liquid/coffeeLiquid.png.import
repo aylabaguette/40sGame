@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvwbu8mhrtq6d"
-path="res://.godot/imported/matchLiquid.png-a72196cbd0352f0511418c5fcfd0251a.ctex"
+uid="uid://wrxsbrjcan1h"
+path="res://.godot/imported/coffeeLiquid.png-54918c1c79d279a7e6bcfd742dc5d6fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/kitchen/Liquid/matchLiquid.png"
-dest_files=["res://.godot/imported/matchLiquid.png-a72196cbd0352f0511418c5fcfd0251a.ctex"]
+source_file="res://sprites/kitchen/Liquid/coffeeLiquid.png"
+dest_files=["res://.godot/imported/coffeeLiquid.png-54918c1c79d279a7e6bcfd742dc5d6fb.ctex"]
 
 [params]
 
