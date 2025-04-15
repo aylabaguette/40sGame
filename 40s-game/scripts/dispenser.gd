@@ -23,6 +23,10 @@ var totalToppings = []
 func _ready() -> void:
 	#get reference to signal levelledUp
 	SignalBus.levelledUp.connect(onLevelUp)
+	
+	# Set the global unlocked toppings array
+	SignalBus.unlockedToppings = unlockedToppings
+	SignalBus.unlockedDrinks = unlockedDrinks
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
