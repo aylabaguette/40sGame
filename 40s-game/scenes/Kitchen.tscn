@@ -108,14 +108,13 @@ scale = Vector2(8.01333, 8.025)
 texture = ExtResource("10_uhls2")
 script = ExtResource("11_7e8gx")
 
-[node name="Liquid" type="Sprite2D" parent="Cup"]
-scale = Vector2(1, 1)
-
 [node name="Area2DCup" type="Area2D" parent="Cup" groups=["cup"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cup/Area2DCup"]
 position = Vector2(-0.669716, 5.49844)
 shape = SubResource("RectangleShape2D_kppjn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cup"]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Dispenser/Rightbutton" to="Dispenser" method="_on_rightbutton_pressed"]
