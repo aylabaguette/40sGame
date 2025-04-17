@@ -111,7 +111,7 @@ script = ExtResource("11_7e8gx")
 [node name="Area2D" type="Area2D" parent="Cup"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cup/Area2D"]
-position = Vector2(-0.598999, 5.14018)
+position = Vector2(-0.669716, 5.49844)
 shape = SubResource("RectangleShape2D_kppjn")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
