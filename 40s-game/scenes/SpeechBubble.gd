@@ -11,14 +11,14 @@ func _ready() -> void:
 	var toppings = SignalBus.unlockedToppings
 	var drinks = SignalBus.unlockedDrinks
 	
-	#var toppingPicked = "res://sprites/kitchen/toppings - dispenser/brown sugar.PNG"
-	#textureRect.texture = toppings
-	#textureRect = toppingPicked
-	#const BROWN_SUGAR = preload("res://sprites/kitchen/toppings - dispenser/brown sugar.PNG")
-	#var message = toppings
-	#textureRect.texture = BROWN_SUGAR
+	# this works, image shows up at runtime
+	const BROWN_SUGAR = preload("res://sprites/kitchen/toppings - dispenser/brown sugar.PNG")
+	var flavourPicked = BROWN_SUGAR
+	$Panel/Label/TextureRect.texture = flavourPicked
+	#var toppingPicked = 
 	
 	#Show the speech bubble with the message
+	#var message = toppings
 	#speechBubble.setBubble(message)
 
 
