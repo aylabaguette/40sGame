@@ -105,8 +105,9 @@ offset_bottom = 210.0
 
 [node name="image" type="TextureRect" parent="SpeechBubble/Panel"]
 layout_mode = 0
-offset_right = 309.0
-offset_bottom = 112.0
+offset_left = 1.0
+offset_right = 307.0
+offset_bottom = 111.0
 
 [node name="Label" type="Label" parent="SpeechBubble/Panel"]
 layout_mode = 0
