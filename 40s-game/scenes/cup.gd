@@ -1,7 +1,10 @@
 extends Sprite2D
 @onready var cup: Sprite2D = $"."
 
+#true if mouse is within the area of the cup 
 var mouseEntered = false
+
+#true if cup is following mouse
 var holdingCup = false
 
 # Called when the node enters the scene tree for the first time.
@@ -11,12 +14,15 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	#if the mouse is clicked within the area of the cup pickup/drop cup
 	if(Input.is_action_just_pressed("mouse click") && mouseEntered):
 		holdingCup = !holdingCup
 		
+	#make cup follow mouse 
 	if(holdingCup == true):
 		cup.position = get_global_mouse_position()
 	
+#signals that activate when mouse is within area of cup 
 func _on_area_2d_mouse_entered() -> void:
 	mouseEntered = true
 	
