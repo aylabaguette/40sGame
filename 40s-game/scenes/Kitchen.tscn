@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
 [ext_resource type="Texture2D" uid="uid://br7c6mch33g2a" path="res://sprites/kitchen/Dispenser.PNG" id="3_igrlo"]
 [ext_resource type="Texture2D" uid="uid://dqrfyppmuq80u" path="res://sprites/kitchen/Lids.PNG" id="4_c85uw"]
-[ext_resource type="Script" uid="uid://b8v830snxvlq5" path="res://scripts/dispenser.gd" id="5_bdred"]
+[ext_resource type="Script" uid="uid://ej2m7yxjpptp" path="res://scripts/dispenser.gd" id="5_bdred"]
 [ext_resource type="Texture2D" uid="uid://c8tsmx6qthl1" path="res://sprites/kitchen/toppings - dispenser/coffee.PNG" id="5_cj8jx"]
 [ext_resource type="Texture2D" uid="uid://dudmdjilkh1qy" path="res://sprites/kitchen/Lid (drag).PNG" id="5_o883t"]
 [ext_resource type="Texture2D" uid="uid://csy775ati26k7" path="res://sprites/kitchen/Menu.PNG" id="6_aoept"]
