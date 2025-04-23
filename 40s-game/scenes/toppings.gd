@@ -9,8 +9,8 @@ extends Node2D
 
 @onready var topping_drag: Sprite2D = $"../toppingDrag"
 
+var unlockedToppings
 
-var unlockedToppings = [lychee_jelly,coconut_jelly,mango_popping,milk_foam,red_bean,tapioca,popping_pearls]
 var totalToppings = []
 
 var unlockedToppingsCup = []
@@ -18,26 +18,24 @@ var totalToppingsCup = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(unlockedToppings[0])
-
+	
+	unlockedToppings = [lychee_jelly,coconut_jelly,mango_popping,milk_foam,red_bean,tapioca,popping_pearls]
+	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	if(Input.is_action_just_pressed("mouse click")):
-		var mousePos = get_local_mouse_position()
-	
-		for topping in range(unlockedToppings.size()):
-			var currentTopping
-			#print(topping)
-			
-			currentTopping = unlockedToppings[topping]
-			
-			#print(currentTopping)
-
-			#if(lychee_jelly.get_viewport_rect().has_point(mousePos)):
-				#print("inside")
-			
+	for topping in range(unlockedToppings.size()):
+		var currentTopping
 		
-		
+		currentTopping = unlockedToppings[topping]
+		var mousePos = get_global_mouse_position()
+		var local_mouse_pos = currentTopping.to_local(mousePos)
+									
+		if(currentTopping.get_rect().has_point(local_mouse_pos)):
+			print(currentTopping)
+				
+			
+			
