@@ -105,13 +105,33 @@ offset_bottom = 210.0
 
 [node name="image" type="TextureRect" parent="SpeechBubble/Panel"]
 layout_mode = 0
-offset_left = 1.0
-offset_right = 307.0
-offset_bottom = 111.0
+offset_left = -4.0
+offset_top = 3.0
+offset_right = 369.0
+offset_bottom = 215.0
+expand_mode = 3
+stretch_mode = 4
 
 [node name="Label" type="Label" parent="SpeechBubble/Panel"]
 layout_mode = 0
-offset_right = 308.0
-offset_bottom = 111.0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 305.0
+offset_bottom = 108.0
+
+[node name="Label2" type="Label" parent="SpeechBubble/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label3" type="Label" parent="SpeechBubble/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label4" type="Label" parent="SpeechBubble/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
