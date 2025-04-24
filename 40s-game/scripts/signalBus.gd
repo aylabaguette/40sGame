@@ -3,6 +3,7 @@ extends Node
 #by any node anywhere in the code. 
 
 signal levelledUp(next_level)
+signal toppingInCup(cupPosition)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://gkkp38x5uoh5"]
+[gd_scene load_steps=33 format=3 uid="uid://gkkp38x5uoh5"]
 
 [ext_resource type="Script" uid="uid://c4jye0n3lg0em" path="res://scripts/kitchen.gd" id="1_wjto4"]
 [ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
@@ -51,6 +51,8 @@ size = Vector2(147.17, 150.943)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrmha"]
 size = Vector2(118, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwgv8"]
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_wjto4")
@@ -254,7 +256,14 @@ region_rect = Rect2(237, 0, 187, 237)
 position = Vector2(-5, -26)
 shape = SubResource("RectangleShape2D_lrmha")
 
-[node name="toppingDrag" type="Sprite2D" parent="."]
+[node name="toppingDrag" type="Sprite2D" parent="." groups=["topping"]]
+texture_filter = 3
+scale = Vector2(5, 5)
+
+[node name="Area2D" type="Area2D" parent="toppingDrag" groups=["topping"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toppingDrag/Area2D"]
+shape = SubResource("RectangleShape2D_jwgv8")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Dispenser/Rightbutton" to="Dispenser" method="_on_rightbutton_pressed"]
@@ -263,6 +272,8 @@ shape = SubResource("RectangleShape2D_lrmha")
 [connection signal="area_entered" from="Dispenser/DispenserArea" to="Dispenser" method="_on_dispenser_area_area_entered"]
 [connection signal="area_exited" from="Dispenser/DispenserArea" to="Dispenser" method="_on_dispenser_area_area_exited"]
 [connection signal="pressed" from="Lids/Button" to="Lids" method="_on_button_pressed"]
+[connection signal="area_entered" from="Cup/Area2DCup" to="Cup" method="_on_area_2d_cup_area_entered"]
+[connection signal="area_shape_entered" from="Cup/Area2DCup" to="." method="_on_area_2d_cup_area_shape_entered"]
 [connection signal="mouse_entered" from="Cup/Area2DCup" to="Cup" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Cup/Area2DCup" to="Cup" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="toppings cups/lychee jelly/ArealycheeJelly" to="toppings cups" method="_on_arealychee_jelly_mouse_entered"]

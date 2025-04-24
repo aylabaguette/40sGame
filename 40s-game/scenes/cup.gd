@@ -9,8 +9,8 @@ var holdingCup = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
@@ -28,3 +28,9 @@ func _on_area_2d_mouse_entered() -> void:
 	
 func _on_area_2d_mouse_exited() -> void:
 	mouseEntered = false
+	
+func _on_area_2d_cup_area_entered(area: Area2D) -> void:
+	while(area.is_in_group("topping")):
+		var cupPosition = cup.position
+		SignalBus.toppingInCup.emit(cupPosition)
+		

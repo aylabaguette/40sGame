@@ -20,6 +20,9 @@ const TAPIOCA_CUP = preload("res://sprites/kitchen/toppings - dispenser/toppings
 @onready var topping_drag: Sprite2D = $"../toppingDrag"
 
 var toppingFollowMouse = false
+var toppingFollowCup = false
+
+var toppingPosition
 
 #arrays for different sprite arrays
 var unlockedToppings
@@ -31,6 +34,7 @@ var totalToppingsCup = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalBus.toppingInCup.connect(toppingInCup)
 	
 	#initialize topping array w sprites
 	#very important for this to be here don't move it!
@@ -40,6 +44,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(toppingFollowMouse):
 		topping_drag.position = get_global_mouse_position()
+		
+	if(toppingFollowCup):
+		topping_drag = toppingPosition
 	
 func _input(event: InputEvent) -> void:
 	#for loop that loops through array of toppings
@@ -56,4 +63,6 @@ func _input(event: InputEvent) -> void:
 				topping_drag.texture = unlockedToppingsCup[topping]
 				toppingFollowMouse = true 
 			
-			
+func toppingInCup(cupPositon):
+	toppingFollowCup = true
+	toppingPosition = cupPositon
