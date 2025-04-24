@@ -23,6 +23,7 @@ var toppingFollowMouse = false
 var toppingFollowCup = false
 
 var toppingPosition
+var resetTopping = false
 
 #arrays for different sprite arrays
 var unlockedToppings
@@ -46,7 +47,7 @@ func _process(delta: float) -> void:
 		topping_drag.position = get_global_mouse_position()
 		
 	if(toppingFollowCup):
-		topping_drag = toppingPosition
+		topping_drag.position = toppingPosition
 	
 func _input(event: InputEvent) -> void:
 	#for loop that loops through array of toppings
@@ -62,7 +63,19 @@ func _input(event: InputEvent) -> void:
 			if(currentTopping.get_rect().has_point(local_mouse_pos)):
 				topping_drag.texture = unlockedToppingsCup[topping]
 				toppingFollowMouse = true 
+				
+				#if the topping is in the cup when the jar is clicked, reset back to mouse
+				if(toppingFollowCup):
+					resetTopping = true 
+					toppingFollowMouse = true
+					toppingFollowCup = false
+				else:
+					resetTopping = false
 			
 func toppingInCup(cupPositon):
-	toppingFollowCup = true
+	if(resetTopping == false ):
+		toppingFollowCup = true
+		toppingFollowMouse = false
+		resetTopping = true 
+	
 	toppingPosition = cupPositon

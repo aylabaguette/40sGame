@@ -7,6 +7,8 @@ var mouseEntered = false
 #true if cup is following mouse
 var holdingCup = false
 
+var toppingInCup = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -21,6 +23,10 @@ func _process(delta: float) -> void:
 	#make cup follow mouse 
 	if(holdingCup == true):
 		cup.position = get_global_mouse_position()
+		
+	if(toppingInCup ):
+		var cupPosition = cup.position
+		SignalBus.toppingInCup.emit(cupPosition)
 	
 #signals that activate when mouse is within area of cup 
 func _on_area_2d_mouse_entered() -> void:
@@ -30,7 +36,8 @@ func _on_area_2d_mouse_exited() -> void:
 	mouseEntered = false
 	
 func _on_area_2d_cup_area_entered(area: Area2D) -> void:
-	while(area.is_in_group("topping")):
-		var cupPosition = cup.position
-		SignalBus.toppingInCup.emit(cupPosition)
-		
+	if(area.is_in_group("topping")):
+		toppingInCup = true 
+
+func _on_area_2d_cup_area_exited(area: Area2D) -> void:
+	toppingInCup = false 
