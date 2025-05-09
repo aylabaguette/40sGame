@@ -22,6 +22,9 @@ const TAPIOCA_CUP = preload("res://sprites/kitchen/toppings - dispenser/toppings
 var toppingFollowMouse = false
 var toppingFollowCup = false
 
+var newInstanceFollowMouse = false
+var newInstanceFollowCup = false
+
 var toppingPosition
 var resetTopping = false
 
@@ -40,6 +43,8 @@ var totalToppingsCup = []
 func _ready() -> void:
 	SignalBus.toppingInCup.connect(toppingInCup)
 	
+	SignalBus.toppingInCup.connect(newInstanceInCup)
+	
 	#initialize topping array w sprites
 	#very important for this to be here don't move it!
 	unlockedToppings = [lychee_jelly,coconut_jelly,mango_popping,milk_foam,red_bean,tapioca,popping_pearls]
@@ -49,16 +54,15 @@ func _process(delta: float) -> void:
 	if(toppingFollowMouse):
 		topping_drag.position = get_global_mouse_position()
 		
-	if(newInstance == true):
-		print("new instance")
-		toppingInstance = topping_drag.duplicate()
-		add_child(toppingInstance)	
+	if(newInstanceFollowMouse):
 		toppingInstance.position = get_global_mouse_position()
-		newInstance = false
 		
 	if(toppingFollowCup):
 		topping_drag.position = toppingPosition
-	
+		
+	#if(newInstanceFollowCup):
+		#toppingInstance.position = toppingPosition
+		
 func _input(event: InputEvent) -> void:
 	#for loop that loops through array of toppings
 	if(Input.is_action_just_pressed("mouse click")):
@@ -78,14 +82,23 @@ func _input(event: InputEvent) -> void:
 					toppingInstance.texture = unlockedToppingsCup[topping]
 
 				#if the topping is in the cup when the jar is clicked, reset back to mouse
-				if(toppingFollowCup):
+				if(toppingFollowCup && newInstance == false):
 					toppingFollowMouse = true
 					toppingFollowCup = false
-					newInstance = true 
-					print("yes")
+					newInstance = true
+					
+					toppingInstance = topping_drag.duplicate()
+					add_child(toppingInstance)	
+					toppingInstance.add_to_group("newInstanceTopping")
+					newInstanceFollowMouse = true
 							
 func toppingInCup(cupPositon):
 	toppingFollowCup = true
-	toppingFollowMouse = false
-
+	toppingFollowMouse = false		
+	
 	toppingPosition = cupPositon
+
+func newInstanceInCup(newInstanceInCup):
+	if(newInstanceInCup):
+		newInstanceFollowCup = true
+		newInstanceFollowMouse = false
