@@ -20,7 +20,7 @@ func _ready() -> void:
 	var toppingSelected = "res://sprites/kitchen/toppings - dispenser/brown sugar.PNG"
 	#var message = "order text here!"
 	#I woudl like to order _flavour_ (photo) with _topping1_ (photo) and _topping2_ (photo) pelase!
-	var message1 = "I would like to order "
+	var message1 = "I would like to order __ with __ and __ please!"
 	var message2 = " with "
 	var message3 = " and "
 	var message4 = " please!"

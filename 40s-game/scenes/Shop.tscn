@@ -116,8 +116,8 @@ stretch_mode = 4
 layout_mode = 0
 offset_left = -2.0
 offset_top = 2.0
-offset_right = 305.0
-offset_bottom = 108.0
+offset_right = 307.0
+offset_bottom = 111.0
 
 [node name="Label2" type="Label" parent="SpeechBubble/Panel"]
 layout_mode = 0
