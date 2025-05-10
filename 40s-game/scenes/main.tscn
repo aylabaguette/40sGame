@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckstbr3ainxrq"]
+[gd_scene load_steps=3 format=3 uid="uid://hbo1e1253o33"]
 
 [ext_resource type="PackedScene" uid="uid://gkkp38x5uoh5" path="res://scenes/Kitchen.tscn" id="1_o38w6"]
 [ext_resource type="PackedScene" uid="uid://d7otfdihf1ee" path="res://scenes/Shop.tscn" id="2_gyjwt"]

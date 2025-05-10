@@ -1,19 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://gkkp38x5uoh5"]
+[gd_scene load_steps=14 format=3 uid="uid://gkkp38x5uoh5"]
 
-[ext_resource type="Script" uid="uid://vlpexesctqxg" path="res://scripts/kitchen.gd" id="1_wjto4"]
+[ext_resource type="Script" path="res://scripts/kitchen.gd" id="1_wjto4"]
 [ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
 [ext_resource type="Texture2D" uid="uid://br7c6mch33g2a" path="res://sprites/kitchen/Dispenser.PNG" id="3_igrlo"]
 [ext_resource type="Texture2D" uid="uid://dqrfyppmuq80u" path="res://sprites/kitchen/Lids.PNG" id="4_c85uw"]
-[ext_resource type="Script" uid="uid://cscxlkvqccfas" path="res://scripts/dispenser.gd" id="5_bdred"]
+[ext_resource type="Script" path="res://scripts/dispenser.gd" id="5_bdred"]
 [ext_resource type="Texture2D" uid="uid://c8tsmx6qthl1" path="res://sprites/kitchen/toppings - dispenser/coffee.PNG" id="5_cj8jx"]
 [ext_resource type="Texture2D" uid="uid://dudmdjilkh1qy" path="res://sprites/kitchen/Lid (drag).PNG" id="5_o883t"]
 [ext_resource type="Texture2D" uid="uid://csy775ati26k7" path="res://sprites/kitchen/Menu.PNG" id="6_aoept"]
-[ext_resource type="Script" uid="uid://d4kdsn8h2nq1e" path="res://scripts/drinks.gd" id="7_vqlel"]
+[ext_resource type="Script" path="res://scripts/drinks.gd" id="7_vqlel"]
 [ext_resource type="Texture2D" uid="uid://bj0vn7axdv5o3" path="res://sprites/cups/cup.png" id="10_uhls2"]
-[ext_resource type="Script" uid="uid://dop5sflt3kvil" path="res://scenes/cup.gd" id="11_7e8gx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvqij"]
-size = Vector2(111, 72)
+[ext_resource type="Script" path="res://scenes/cup.gd" id="11_7e8gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bv3je"]
 size = Vector2(388.75, 358.75)
@@ -80,13 +77,6 @@ offset_top = 350.0
 offset_right = 653.0
 offset_bottom = 393.0
 
-[node name="DispenserArea" type="Area2D" parent="Dispenser"]
-position = Vector2(608, 350)
-
-[node name="DispenserShape" type="CollisionShape2D" parent="Dispenser/DispenserArea"]
-position = Vector2(84.5, 218)
-shape = SubResource("RectangleShape2D_cvqij")
-
 [node name="Lids" type="Area2D" parent="."]
 position = Vector2(386, 322)
 scale = Vector2(0.4, 0.4)
@@ -109,14 +99,14 @@ texture = ExtResource("10_uhls2")
 script = ExtResource("11_7e8gx")
 
 [node name="Area2D" type="Area2D" parent="Cup"]
+scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cup/Area2D"]
 position = Vector2(-0.669716, 5.49844)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kppjn")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Dispenser/Rightbutton" to="Dispenser" method="_on_rightbutton_pressed"]
 [connection signal="pressed" from="Dispenser/LeftButton" to="Dispenser" method="_on_left_button_pressed"]
-[connection signal="area_shape_entered" from="Dispenser/DispenserArea" to="Dispenser" method="_on_dispenser_area_area_shape_entered"]
 [connection signal="mouse_entered" from="Cup/Area2D" to="Cup" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Cup/Area2D" to="Cup" method="_on_area_2d_mouse_exited"]
