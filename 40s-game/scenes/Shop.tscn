@@ -158,25 +158,6 @@ offset_top = 26.0
 offset_right = 184.0
 offset_bottom = 49.0
 
-[node name="holder" type="Sprite2D" parent="SpeechBubble/Panel"]
-
-[node name="label" type="Label" parent="SpeechBubble/Panel/holder"]
-offset_left = 255.0
-offset_top = -91.0
-offset_right = 373.0
-offset_bottom = -13.0
-
-[node name="brown sugar" type="Area2D" parent="SpeechBubble/Panel"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpeechBubble/Panel/brown sugar"]
-position = Vector2(17.5, 18.5)
-shape = SubResource("RectangleShape2D_abjrc")
-
-[node name="Sprite2D" type="Sprite2D" parent="SpeechBubble/Panel/brown sugar"]
-position = Vector2(17.5, 18.5)
-scale = Vector2(0.0810809, 0.0852018)
-texture = ExtResource("13_hd80v")
-region_enabled = true
-region_rect = Rect2(380.818, 48.7903, 259.831, 223.652)
+[node name="Sprite2D" type="Sprite2D" parent="SpeechBubble/Panel"]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
