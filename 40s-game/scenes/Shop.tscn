@@ -1,81 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://d7otfdihf1ee"]
+[gd_scene load_steps=13 format=3 uid="uid://d7otfdihf1ee"]
 
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://buyudqqe76oda" path="res://sprites/shop/Backdrop.png" id="1_72jb3"]
-[ext_resource type="Script" path="res://scripts/shop.gd" id="1_v2lqu"]
+[ext_resource type="Script" uid="uid://h7fv10qmdob3" path="res://scripts/shop.gd" id="1_v2lqu"]
 [ext_resource type="Texture2D" uid="uid://dnw401aomiw14" path="res://sprites/shop/Counter.png" id="3_05b3x"]
 [ext_resource type="Texture2D" uid="uid://dau526nnbxysi" path="res://sprites/characters/Mabel.PNG" id="4_pv6g3"]
 [ext_resource type="Texture2D" uid="uid://clwfwiq2uw1vx" path="res://sprites/shop/Door.png" id="4_vcaxr"]
 [ext_resource type="Texture2D" uid="uid://cjrfunaxpsd1y" path="res://sprites/characters/Bob Ferguson.PNG" id="5_4gh6d"]
+[ext_resource type="Script" path="res://scenes/character.gd" id="5_w06dj"]
 [ext_resource type="Texture2D" uid="uid://226vmje5xdkf" path="res://sprites/characters/Momo.PNG" id="6_g3rx4"]
 [ext_resource type="Texture2D" uid="uid://cmiv2bwaym08k" path="res://sprites/characters/Kyrat.PNG" id="7_gso0l"]
 [ext_resource type="Texture2D" uid="uid://bb667n3dtoqd7" path="res://sprites/characters/Emily.PNG" id="8_77h1o"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="10_wg3wp"]
-=======
-[ext_resource type="Script" uid="uid://cpnyd0gsis5kb" path="res://scenes/SpeechBubble.gd" id="12_lljb8"]
-
-[sub_resource type="Resource" id="Resource_rgcs7"]
-metadata/__load_path__ = "res://scripts/shop.gd"
-
-[sub_resource type="Resource" id="Resource_ec5oe"]
-metadata/__load_path__ = "res://sprites/shop/Backdrop.png"
-
-[sub_resource type="Resource" id="Resource_t4md6"]
-metadata/__load_path__ = "res://sprites/shop/Door.png"
-
-[sub_resource type="Resource" id="Resource_cimqq"]
-metadata/__load_path__ = "res://sprites/shop/Counter.png"
-
-[sub_resource type="Resource" id="Resource_yltc6"]
-metadata/__load_path__ = "res://scenes/character.gd"
-
-[sub_resource type="Resource" id="Resource_fpbbi"]
-metadata/__load_path__ = "res://sprites/characters/Emily.PNG"
-
-[sub_resource type="Resource" id="Resource_m0qts"]
-metadata/__load_path__ = "res://sprites/characters/Kyrat.PNG"
-
-[sub_resource type="Resource" id="Resource_ht580"]
-metadata/__load_path__ = "res://sprites/characters/Momo.PNG"
-
-[sub_resource type="Resource" id="Resource_skkvx"]
-metadata/__load_path__ = "res://sprites/characters/Bob Ferguson.PNG"
-
-[sub_resource type="Resource" id="Resource_eo1la"]
-metadata/__load_path__ = "res://sprites/characters/Mabel.PNG"
-
-[sub_resource type="Resource" id="Resource_toxd1"]
-metadata/__load_path__ = "res://scripts/level.gd"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ef445"]
->>>>>>> Stashed changes
-
-[sub_resource type="Resource" id="Resource_47hci"]
-metadata/__load_path__ = "res://sprites/kitchen/toppings - dispenser/brown sugar.PNG"
-
-[sub_resource type="Resource" id="Resource_hd80v"]
-metadata/__load_path__ = "res://sprites/kitchen/toppings - dispenser/coffee.PNG"
-
-[sub_resource type="Resource" id="Resource_abjrc"]
-metadata/__load_path__ = "res://sprites/kitchen/toppings - dispenser/lemon.PNG"
-
-[sub_resource type="Resource" id="Resource_jccym"]
-metadata/__load_path__ = "res://sprites/kitchen/toppings - dispenser/mango.PNG"
-
-[sub_resource type="Resource" id="Resource_plhqw"]
-metadata/__load_path__ = "res://sprites/kitchen/toppings - dispenser/matcha.PNG"
-
-[sub_resource type="Resource" id="Resource_a6yfk"]
-metadata/__load_path__ = "res://sprites/kitchen/toppings - dispenser/passion fruit.PNG"
+[ext_resource type="Script" uid="uid://chxx3e8n3xwsh" path="res://scripts/level.gd" id="10_wg3wp"]
+[ext_resource type="Script" path="res://scenes/SpeechBubble.gd" id="12_lljb8"]
 
 [node name="Shop" type="Node2D"]
-script = SubResource("Resource_rgcs7")
+script = ExtResource("1_v2lqu")
 
 [node name="Background shop" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(407.37, 323.5)
 scale = Vector2(6.77717, 6.39)
-texture = SubResource("Resource_ec5oe")
+texture = ExtResource("1_72jb3")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 14.0
@@ -88,51 +33,48 @@ text = "SWITCH SCENE"
 texture_filter = 1
 position = Vector2(394, 306)
 scale = Vector2(6.8, 6.8)
-texture = SubResource("Resource_t4md6")
+texture = ExtResource("4_vcaxr")
 
 [node name="Counter" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(444, 333)
 scale = Vector2(6.2, 6.2)
-texture = SubResource("Resource_cimqq")
+texture = ExtResource("3_05b3x")
 
 [node name="Character sprites" type="Node2D" parent="."]
 
-<<<<<<< Updated upstream
-=======
 [node name="character" type="Node2D" parent="Character sprites"]
-script = SubResource("Resource_yltc6")
+script = ExtResource("5_w06dj")
 
->>>>>>> Stashed changes
 [node name="Emily" type="Sprite2D" parent="Character sprites"]
 visible = false
 position = Vector2(128, 437)
 scale = Vector2(0.28, 0.28)
-texture = SubResource("Resource_fpbbi")
+texture = ExtResource("8_77h1o")
 
 [node name="Kyrat" type="Sprite2D" parent="Character sprites"]
 visible = false
 position = Vector2(130, 494)
 scale = Vector2(0.25, 0.25)
-texture = SubResource("Resource_m0qts")
+texture = ExtResource("7_gso0l")
 
 [node name="Momo" type="Sprite2D" parent="Character sprites"]
 visible = false
 position = Vector2(150, 454)
 scale = Vector2(0.3, 0.3)
-texture = SubResource("Resource_ht580")
+texture = ExtResource("6_g3rx4")
 
 [node name="BobFerguson" type="Sprite2D" parent="Character sprites"]
 visible = false
 position = Vector2(234, 373)
 scale = Vector2(0.35, 0.35)
-texture = SubResource("Resource_skkvx")
+texture = ExtResource("5_4gh6d")
 
 [node name="Mabel" type="Sprite2D" parent="Character sprites"]
 visible = false
 position = Vector2(246, 394)
 scale = Vector2(0.37, 0.37)
-texture = SubResource("Resource_eo1la")
+texture = ExtResource("4_pv6g3")
 
 [node name="UI" type="Node2D" parent="."]
 
@@ -143,7 +85,7 @@ offset_right = 509.0
 offset_bottom = 47.0
 text = "You are at level X
 X more drinks until level up"
-script = SubResource("Resource_toxd1")
+script = ExtResource("10_wg3wp")
 
 [node name="Days" type="Label" parent="UI"]
 offset_left = 185.0
@@ -152,8 +94,6 @@ offset_right = 349.0
 offset_bottom = 45.0
 text = "Day X since opening!!"
 
-<<<<<<< Updated upstream
-=======
 [node name="SpeechBubble" type="Node2D" parent="."]
 script = ExtResource("12_lljb8")
 
@@ -218,102 +158,4 @@ offset_top = 26.0
 offset_right = 184.0
 offset_bottom = 49.0
 
-[node name="holder" type="Sprite2D" parent="SpeechBubble/Panel"]
-
-[node name="label" type="Label" parent="SpeechBubble/Panel/holder"]
-offset_left = 249.0
-offset_top = -94.0
-offset_right = 375.0
-offset_bottom = -32.0
-
-[node name="brownSugar" type="Area2D" parent="SpeechBubble/Panel"]
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpeechBubble/Panel/brownSugar"]
-position = Vector2(12, 13)
-shape = SubResource("RectangleShape2D_ef445")
-
-[node name="Sprite2D" type="Sprite2D" parent="SpeechBubble/Panel/brownSugar"]
-position = Vector2(12, 13)
-scale = Vector2(0.0720001, 0.0807175)
-texture = SubResource("Resource_47hci")
-region_enabled = true
-region_rect = Rect2(388.012, 46.3549, 250.723, 223.847)
-
-[node name="coffee" type="Area2D" parent="SpeechBubble/Panel"]
-position = Vector2(23, 0)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpeechBubble/Panel/coffee"]
-position = Vector2(12, 13)
-shape = SubResource("RectangleShape2D_ef445")
-
-[node name="Sprite2D" type="Sprite2D" parent="SpeechBubble/Panel/coffee"]
-position = Vector2(12, 13)
-scale = Vector2(0.0720001, 0.0807175)
-texture = SubResource("Resource_hd80v")
-region_enabled = true
-region_rect = Rect2(388.012, 46.3549, 250.723, 223.847)
-
-[node name="lemon" type="Area2D" parent="SpeechBubble/Panel"]
-position = Vector2(47, 0)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpeechBubble/Panel/lemon"]
-position = Vector2(12, 13)
-shape = SubResource("RectangleShape2D_ef445")
-
-[node name="Sprite2D" type="Sprite2D" parent="SpeechBubble/Panel/lemon"]
-position = Vector2(12, 13)
-scale = Vector2(0.0720001, 0.0807175)
-texture = SubResource("Resource_abjrc")
-region_enabled = true
-region_rect = Rect2(388.012, 46.3549, 250.723, 223.847)
-
-[node name="mango" type="Area2D" parent="SpeechBubble/Panel"]
-position = Vector2(0, 22)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpeechBubble/Panel/mango"]
-position = Vector2(12, 13)
-shape = SubResource("RectangleShape2D_ef445")
-
-[node name="Sprite2D" type="Sprite2D" parent="SpeechBubble/Panel/mango"]
-position = Vector2(12, 13)
-scale = Vector2(0.0720001, 0.0807175)
-texture = SubResource("Resource_jccym")
-region_enabled = true
-region_rect = Rect2(388.012, 46.3549, 250.723, 223.847)
-
-[node name="matcha" type="Area2D" parent="SpeechBubble/Panel"]
-position = Vector2(23, 22)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpeechBubble/Panel/matcha"]
-position = Vector2(12, 13)
-shape = SubResource("RectangleShape2D_ef445")
-
-[node name="Sprite2D" type="Sprite2D" parent="SpeechBubble/Panel/matcha"]
-position = Vector2(12, 13)
-scale = Vector2(0.0720001, 0.0807175)
-texture = SubResource("Resource_plhqw")
-region_enabled = true
-region_rect = Rect2(388.012, 46.3549, 250.723, 223.847)
-
-[node name="passionFruit" type="Area2D" parent="SpeechBubble/Panel"]
-position = Vector2(47, 22)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpeechBubble/Panel/passionFruit"]
-position = Vector2(12, 13)
-shape = SubResource("RectangleShape2D_ef445")
-
-[node name="Sprite2D" type="Sprite2D" parent="SpeechBubble/Panel/passionFruit"]
-position = Vector2(12, 13)
-scale = Vector2(0.0720001, 0.0807175)
-texture = SubResource("Resource_a6yfk")
-region_enabled = true
-region_rect = Rect2(388.012, 46.3549, 250.723, 223.847)
-
->>>>>>> Stashed changes
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
