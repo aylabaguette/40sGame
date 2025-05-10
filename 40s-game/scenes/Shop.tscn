@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d7otfdihf1ee"]
+[gd_scene load_steps=15 format=3 uid="uid://d7otfdihf1ee"]
 
 [ext_resource type="Texture2D" uid="uid://buyudqqe76oda" path="res://sprites/shop/Backdrop.png" id="1_72jb3"]
 [ext_resource type="Script" uid="uid://h7fv10qmdob3" path="res://scripts/shop.gd" id="1_v2lqu"]
@@ -157,5 +157,19 @@ offset_left = 144.0
 offset_top = 26.0
 offset_right = 184.0
 offset_bottom = 49.0
+
+[node name="holder" type="Sprite2D" parent="SpeechBubble/Panel"]
+
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpeechBubble/Panel/brown sugar"]
+position = Vector2(17.5, 18.5)
+shape = SubResource("RectangleShape2D_abjrc")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpeechBubble/Panel/brown sugar"]
+position = Vector2(17.5, 18.5)
+scale = Vector2(0.0810809, 0.0852018)
+texture = ExtResource("13_hd80v")
+region_enabled = true
+region_rect = Rect2(380.818, 48.7903, 259.831, 223.652)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
