@@ -27,7 +27,7 @@ func _ready() -> void:
 	#gets the character manager node using the pat that was set in the inspector
 	var characterManager = get_node(characterManagerPath)
 	
-	#connects the "characterEntered" signal from the character manager to this script
+	#connects the "characterEntered" signal from the character manager to this script's "showSpeechBubble" thingy
 	characterManager.connect("characterEntered", Callable(self, "showSpeechBubble"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,25 +41,47 @@ func getName(path: String) -> String:
 	return fileName 
 	
 
-#this function sets the images and text of the speech bubble panel!
-func setBubble(image_path: String, image_path2: String, image_path3: String, order1: String, order2: String, order3: String, order4: String)-> void:
+	# This function sets the images and text in the speech bubble
+func setBubble(image_path: String, image_path2: String, image_path3: String, order1: String, order2: String, order3: String, order4: String) -> void:
 	
-	#loads textures from the given file paths!
-	var texture = load(image_path)
-	var texture2 = load(image_path2)
-	var texture3 = load(image_path3)
+	#the panel starts hidden and once the function is called it becomes visible
+	panel.visible = true
 	
-	#assgins the textrues to the image spaces in the panel
-	image.texture = texture
-	image2.texture = texture2
-	image3.texture = texture3
+	#the text and images start "blank" and then after waiting are set to the actual order to apear on screen line by line
+	label.text = ""
+	label2.text = ""
+	label3.text = ""
+	label4.text = ""
 	
-	#sets the text for the order!
+	image.texture = null
+	image2.texture = null
+	image3.texture = null
+	
+	image.visible = false
+	image2.visible = false
+	image3.visible = false
+
+	# this is the line by line "appearing" of the text and images...
 	label.text = order1
+	image.texture = load(image_path)
+	image.visible = true
+	#this line is the "waiting"/timing thingy
+	await get_tree().create_timer(1).timeout
+
 	label2.text = order2
+	image2.texture = load(image_path2)
+	image2.visible = true
+	await get_tree().create_timer(1).timeout
+
 	label3.text = order3
+	image3.texture = load(image_path3)
+	image3.visible = true
+	await get_tree().create_timer(1).timeout
+
 	label4.text = order4
-	
+
+
+
 
 #this functions is called after the character walks in and shows the speech bubble w/ the order details!
 func showSpeechBubble():
@@ -80,5 +102,5 @@ func showSpeechBubble():
 	var message4 = " please!"
 	
 	#fills in the speech bubble visuals and shows the actual panel?!
-	setBubble(toppingSelected, toppingSelected2, flavourSelected, message1, message2, message3, message4)
+	setBubble(flavourSelected, toppingSelected, toppingSelected2, message1, message2, message3, message4)
 	panel.visible = true

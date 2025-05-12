@@ -36,6 +36,9 @@ func randomCharacter():
 	var selectedSprite = characterSprites[randi() % characterSprites.size()]
 	selectedSprite.visible = true
 	
+	#wait a bit before moving 
+	await get_tree().create_timer(1).timeout
+	
 	#the "animation" part so the character appears and then moves behind the counter
 	var startPosition = selectedSprite.position
 	var endPosition = startPosition + Vector2(350, 10)

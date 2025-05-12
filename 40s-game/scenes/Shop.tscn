@@ -100,6 +100,7 @@ script = ExtResource("12_lljb8")
 characterManagerPath = NodePath("../Character sprites/character")
 
 [node name="Panel" type="Panel" parent="SpeechBubble"]
+visible = false
 offset_left = 438.0
 offset_top = 98.0
 offset_right = 747.0
@@ -107,28 +108,28 @@ offset_bottom = 210.0
 
 [node name="image" type="TextureRect" parent="SpeechBubble/Panel"]
 layout_mode = 0
-offset_left = 109.0
-offset_top = 23.0
-offset_right = 482.0
-offset_bottom = 235.0
+offset_left = 170.0
+offset_top = -7.0
+offset_right = 543.0
+offset_bottom = 205.0
 expand_mode = 3
 stretch_mode = 4
 
 [node name="image2" type="TextureRect" parent="SpeechBubble/Panel"]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 61.0
-offset_right = 419.0
-offset_bottom = 273.0
+offset_left = 94.0
+offset_top = 27.0
+offset_right = 467.0
+offset_bottom = 239.0
 expand_mode = 3
 stretch_mode = 4
 
 [node name="image3" type="TextureRect" parent="SpeechBubble/Panel"]
 layout_mode = 0
-offset_left = 168.0
-offset_top = -6.0
-offset_right = 541.0
-offset_bottom = 206.0
+offset_left = 45.0
+offset_top = 64.0
+offset_right = 418.0
+offset_bottom = 276.0
 expand_mode = 3
 stretch_mode = 4
 
