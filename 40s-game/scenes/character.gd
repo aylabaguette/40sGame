@@ -39,3 +39,13 @@ func randomCharacter():
 	#or however we decide to have the characrters show up order wise/randomized or not?
 	var selectedSprite = characterSprites[randi() % characterSprites.size()]
 	selectedSprite.visible = true
+	
+	#the "animation" part so the character appears and then moves behind the counter
+	var startPosition = selectedSprite.position
+	var endPosition = startPosition + Vector2(350, 10)
+	
+	#tween lets you do the actual animation stuff...!?
+	var tween = create_tween()
+	
+	#moves the selectedSprit.position to endPosition over 1.5 seconds
+	tween.tween_property(selectedSprite, "position", endPosition, 2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
