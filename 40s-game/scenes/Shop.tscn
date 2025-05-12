@@ -97,6 +97,7 @@ text = "Day X since opening!!"
 
 [node name="SpeechBubble" type="Node2D" parent="."]
 script = ExtResource("12_lljb8")
+character_manager_path = NodePath("../Character sprites/character")
 
 [node name="Panel" type="Panel" parent="SpeechBubble"]
 offset_left = 438.0

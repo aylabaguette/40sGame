@@ -7,6 +7,8 @@ extends Node2D
 @onready var bob_ferguson: Sprite2D = $"../BobFerguson"
 @onready var mabel: Sprite2D = $"../Mabel"
 
+#signal to connect character entering the shop and the speech bubble!
+signal character_arrived
 
 func _ready() -> void: 
 	randomCharacter()
@@ -49,3 +51,8 @@ func randomCharacter():
 	
 	#moves the selectedSprit.position to endPosition over 1.5 seconds
 	tween.tween_property(selectedSprite, "position", endPosition, 2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	
+	tween.tween_callback(Callable(self, "_on_character_arrived"))
+
+func _on_character_arrived():
+	emit_signal("character_arrived")

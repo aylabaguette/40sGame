@@ -14,30 +14,18 @@ extends Node2D
 
 @onready var panel: Panel = $Panel
 
+@export var character_manager_path: NodePath  # Set this in the editor to point to the CharacterManager node
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#access the global variables
 	var toppings = SignalBus.unlockedToppings
 	var drinks = SignalBus.unlockedDrinks
 	
-	#will have to change this variabel to be the randomized toppings that are picked!!??
-	var toppingSelected = "res://sprites/kitchen/toppings - dispenser/brown sugar.PNG"
-	var toppingSelected2 = "res://sprites/kitchen/toppings - dispenser/coffee.PNG" 
-	var flavourSelected = "res://sprites/kitchen/toppings - dispenser/lemon.PNG"
+	var character_manager = get_node(character_manager_path)
+	character_manager.connect("character_arrived", Callable(self, "showSpeechBubble"))
 	
-	var topping1Name = getName(toppingSelected)
-	var topping2Name = getName(toppingSelected2)
-	var flavourName = getName(flavourSelected)
-	
-	
-	#var message = "order text here!"
-	#I woudl like to order _flavour_ (photo) with _topping1_ (photo) and _topping2_ (photo) pelase!
-	var message1 = "I would like to order " +flavourName
-	var message2 = " with " + topping1Name
-	var message3 = " and " + topping2Name
-	var message4 = " please!"
-	
-	setBubble(toppingSelected, toppingSelected2, flavourSelected, message1, message2, message3, message4)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,6 +36,7 @@ func _process(delta: float) -> void:
 func getName(path: String) -> String:
 	var fileName = path.get_file().get_basename()  #this gets the name of the file!!
 	return fileName 
+	
 	
 
 func setBubble(image_path: String, image_path2: String, image_path3: String, order1: String, order2: String, order3: String, order4: String)-> void:
@@ -63,3 +52,21 @@ func setBubble(image_path: String, image_path2: String, image_path3: String, ord
 	label2.text = order2
 	label3.text = order3
 	label4.text = order4
+
+
+func showSpeechBubble():
+	var toppingSelected = "res://sprites/kitchen/toppings - dispenser/brown sugar.PNG"
+	var toppingSelected2 = "res://sprites/kitchen/toppings - dispenser/coffee.PNG"
+	var flavourSelected = "res://sprites/kitchen/toppings - dispenser/lemon.PNG"
+
+	var topping1Name = getName(toppingSelected)
+	var topping2Name = getName(toppingSelected2)
+	var flavourName = getName(flavourSelected)
+
+	var message1 = "I would like to order " + flavourName
+	var message2 = " with " + topping1Name
+	var message3 = " and " + topping2Name
+	var message4 = " please!"
+
+	setBubble(toppingSelected, toppingSelected2, flavourSelected, message1, message2, message3, message4)
+	panel.visible = true
