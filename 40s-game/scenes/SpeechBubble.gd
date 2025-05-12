@@ -22,30 +22,43 @@ func _ready() -> void:
 	
 	#will have to change this variabel to be the randomized toppings that are picked!!??
 	var toppingSelected = "res://sprites/kitchen/toppings - dispenser/brown sugar.PNG"
-	var toppingSelected2 = "res://sprites/kitchen/toppings - dispenser/coffee.PNG"
+	var toppingSelected2 = "res://sprites/kitchen/toppings - dispenser/coffee.PNG" 
 	var flavourSelected = "res://sprites/kitchen/toppings - dispenser/lemon.PNG"
-
+	
+	var topping1Name = getName(toppingSelected)
+	var topping2Name = getName(toppingSelected2)
+	var flavourName = getName(flavourSelected)
+	
+	
 	#var message = "order text here!"
 	#I woudl like to order _flavour_ (photo) with _topping1_ (photo) and _topping2_ (photo) pelase!
-	var message1 = "I would like to order __ with __ and __ please!"
-	var message2 = " with "
-	var message3 = " and "
+	var message1 = "I would like to order " +flavourName
+	var message2 = " with " + topping1Name
+	var message3 = " and " + topping2Name
 	var message4 = " please!"
+	
 	setBubble(toppingSelected, toppingSelected2, flavourSelected, message1, message2, message3, message4)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
+	
+	
+func getName(path: String) -> String:
+	var fileName = path.get_file().get_basename()  #this gets the name of the file!!
+	return fileName 
+	
 
 func setBubble(image_path: String, image_path2: String, image_path3: String, order1: String, order2: String, order3: String, order4: String)-> void:
 	var texture = load(image_path)
 	var texture2 = load(image_path2)
 	var texture3 = load(image_path3)
+	
 	image.texture = texture
-	image.texture = texture2
-	image.texture = texture3
+	image2.texture = texture2
+	image3.texture = texture3
+
 	label.text = order1
 	label2.text = order2
 	label3.text = order3
