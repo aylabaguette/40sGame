@@ -25,13 +25,9 @@ func _process(delta: float) -> void:
 	if(holdingCup == true):
 		cup.position = get_global_mouse_position()
 		
-	if(toppingInCup):
+	if(toppingInCup || newInstanceInCup):
 		var cupPosition = cup.position
-		SignalBus.toppingInCup.emit(cupPosition)
-	
-	if(newInstanceInCup):
-		print("inCup")
-		SignalBus.toppingInCup.emit(newInstanceInCup)
+		SignalBus.toppingInCup.emit(cupPosition,newInstanceInCup)
 	
 #signals that activate when mouse is within area of cup 
 func _on_area_2d_mouse_entered() -> void:
@@ -41,6 +37,8 @@ func _on_area_2d_mouse_exited() -> void:
 	mouseEntered = false
 	
 func _on_area_2d_cup_area_entered(area: Area2D) -> void:
+	
+	print("works")
 	if(area.is_in_group("topping")):
 		toppingInCup = true 
 		
@@ -49,3 +47,5 @@ func _on_area_2d_cup_area_entered(area: Area2D) -> void:
 
 func _on_area_2d_cup_area_exited(area: Area2D) -> void:
 	toppingInCup = false 
+	
+	newInstanceInCup = false

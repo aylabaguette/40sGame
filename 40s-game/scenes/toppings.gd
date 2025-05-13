@@ -19,6 +19,9 @@ const TAPIOCA_CUP = preload("res://sprites/kitchen/toppings - dispenser/toppings
 #sprite for the topping that follows mouse
 @onready var topping_drag: Sprite2D = $"../toppingDrag"
 
+@onready var area_2d: Area2D = $"../toppingDrag/Area2D"
+@onready var collision_shape_2d: CollisionShape2D = $"../toppingDrag/Area2D/CollisionShape2D"
+
 var toppingFollowMouse = false
 var toppingFollowCup = false
 
@@ -29,6 +32,9 @@ var toppingPosition
 var resetTopping = false
 
 var newInstance = false
+var newArea2D: Area2D 
+var newCollisionShape2D: CollisionShape2D
+
 var toppingInstance
 
 #arrays for different sprite arrays
@@ -42,9 +48,7 @@ var totalToppingsCup = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.toppingInCup.connect(toppingInCup)
-	
-	SignalBus.toppingInCup.connect(newInstanceInCup)
-	
+		
 	#initialize topping array w sprites
 	#very important for this to be here don't move it!
 	unlockedToppings = [lychee_jelly,coconut_jelly,mango_popping,milk_foam,red_bean,tapioca,popping_pearls]
@@ -60,8 +64,8 @@ func _process(delta: float) -> void:
 	if(toppingFollowCup):
 		topping_drag.position = toppingPosition
 		
-	#if(newInstanceFollowCup):
-		#toppingInstance.position = toppingPosition
+	if(newInstanceFollowCup):
+		toppingInstance.position = toppingPosition
 		
 func _input(event: InputEvent) -> void:
 	#for loop that loops through array of toppings
@@ -88,17 +92,17 @@ func _input(event: InputEvent) -> void:
 					newInstance = true
 					
 					toppingInstance = topping_drag.duplicate()
+					newArea2D = area_2d.duplicate()
 					add_child(toppingInstance)	
-					toppingInstance.add_to_group("newInstanceTopping")
+					toppingInstance.get_child(0).add_to_group("newInstanceTopping")
 					newInstanceFollowMouse = true
 							
-func toppingInCup(cupPositon):
+func toppingInCup(cupPositon,newInstanceInCup):
 	toppingFollowCup = true
 	toppingFollowMouse = false		
 	
 	toppingPosition = cupPositon
-
-func newInstanceInCup(newInstanceInCup):
+	
 	if(newInstanceInCup):
 		newInstanceFollowCup = true
 		newInstanceFollowMouse = false
