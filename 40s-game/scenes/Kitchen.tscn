@@ -1,5 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://gkkp38x5uoh5"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://vlpexesctqxg" path="res://scripts/kitchen.gd" id="1_wjto4"]
 [ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
 [ext_resource type="Texture2D" uid="uid://br7c6mch33g2a" path="res://sprites/kitchen/Dispenser.PNG" id="3_igrlo"]
@@ -11,15 +12,41 @@
 [ext_resource type="Script" uid="uid://d4kdsn8h2nq1e" path="res://scripts/drinks.gd" id="7_vqlel"]
 [ext_resource type="Texture2D" uid="uid://bj0vn7axdv5o3" path="res://sprites/cups/cup.png" id="10_uhls2"]
 [ext_resource type="Script" uid="uid://b4clj13ele38u" path="res://scenes/cup.gd" id="11_7e8gx"]
+=======
+[ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
+[ext_resource type="Texture2D" uid="uid://br7c6mch33g2a" path="res://sprites/kitchen/Dispenser.PNG" id="3_igrlo"]
+[ext_resource type="Texture2D" uid="uid://dqrfyppmuq80u" path="res://sprites/kitchen/Lids.PNG" id="4_c85uw"]
+[ext_resource type="Texture2D" uid="uid://dudmdjilkh1qy" path="res://sprites/kitchen/Lid (drag).PNG" id="5_o883t"]
+[ext_resource type="Texture2D" uid="uid://csy775ati26k7" path="res://sprites/kitchen/Menu.PNG" id="6_aoept"]
+[ext_resource type="Script" uid="uid://cu0f1tsh45ynb" path="res://scenes/cup.gd" id="11_7e8gx"]
+
+[sub_resource type="Resource" id="Resource_qnge3"]
+metadata/__load_path__ = "res://scripts/kitchen.gd"
+
+[sub_resource type="Resource" id="Resource_dqq82"]
+metadata/__load_path__ = "res://scripts/dispenser.gd"
+
+[sub_resource type="Resource" id="Resource_jmce5"]
+metadata/__load_path__ = "res://sprites/kitchen/toppings - dispenser/coffee.PNG"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvqij"]
+size = Vector2(111, 72)
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bv3je"]
 size = Vector2(388.75, 358.75)
+
+[sub_resource type="Resource" id="Resource_ud40p"]
+metadata/__load_path__ = "res://scripts/drinks.gd"
+
+[sub_resource type="Resource" id="Resource_20l34"]
+metadata/__load_path__ = "res://sprites/cups/cup.png"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kppjn"]
 size = Vector2(14.3677, 13.7383)
 
 [node name="Kitchen" type="Node2D"]
-script = ExtResource("1_wjto4")
+script = SubResource("Resource_qnge3")
 
 [node name="Backgound kitchen" type="Sprite2D" parent="."]
 position = Vector2(408, 321)
@@ -44,7 +71,7 @@ scale = Vector2(0.44, 0.44)
 texture = ExtResource("6_aoept")
 
 [node name="Dispenser" type="Node2D" parent="."]
-script = ExtResource("5_bdred")
+script = SubResource("Resource_dqq82")
 
 [node name="Dispenser" type="Sprite2D" parent="Dispenser"]
 position = Vector2(423, 323)
@@ -54,7 +81,7 @@ texture = ExtResource("3_igrlo")
 [node name="Drink Option" type="Sprite2D" parent="Dispenser/Dispenser"]
 position = Vector2(919.512, 490.244)
 scale = Vector2(0.585366, 0.585366)
-texture = ExtResource("5_cj8jx")
+texture = SubResource("Resource_jmce5")
 
 [node name="Rightbutton" type="Button" parent="Dispenser"]
 modulate = Color(1, 1, 1, 0)
@@ -89,13 +116,13 @@ position = Vector2(-709.375, 565.625)
 shape = SubResource("RectangleShape2D_bv3je")
 
 [node name="Drinks" type="Sprite2D" parent="."]
-script = ExtResource("7_vqlel")
+script = SubResource("Resource_ud40p")
 
 [node name="Cup" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(320.8, 513.75)
 scale = Vector2(8.01333, 8.025)
-texture = ExtResource("10_uhls2")
+texture = SubResource("Resource_20l34")
 script = ExtResource("11_7e8gx")
 
 [node name="Area2D" type="Area2D" parent="Cup"]
