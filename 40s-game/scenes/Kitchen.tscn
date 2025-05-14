@@ -264,7 +264,7 @@ offset_bottom = 27.0
 
 [node name="toppingDrag" type="Sprite2D" parent="." groups=["topping"]]
 texture_filter = 3
-scale = Vector2(5, 5)
+scale = Vector2(3, 3)
 
 [node name="Area2D" type="Area2D" parent="toppingDrag" groups=["topping"]]
 

@@ -80,23 +80,26 @@ func _input(event: InputEvent) -> void:
 			#basically saying if the mouse is within the rect 
 			if(currentTopping.get_rect().has_point(local_mouse_pos)):
 				toppingFollowMouse = true 
-				if(newInstance == false):
-					topping_drag.texture = unlockedToppingsCup[topping]
-				else:
-					toppingInstance.texture = unlockedToppingsCup[topping]
 
 				#if the topping is in the cup when the jar is clicked, reset back to mouse
 				if(toppingFollowCup && newInstance == false):
 					toppingFollowMouse = true
 					toppingFollowCup = false
 					newInstance = true
+					newInstanceFollowMouse = true
 					
 					toppingInstance = topping_drag.duplicate()
 					newArea2D = area_2d.duplicate()
 					add_child(toppingInstance)	
+					toppingInstance.position = get_global_mouse_position()
 					toppingInstance.get_child(0).add_to_group("newInstanceTopping")
-					newInstanceFollowMouse = true
-							
+					toppingInstance.get_child(0).remove_from_group("topping")
+					
+				if(newInstance == false):
+					topping_drag.texture = unlockedToppingsCup[topping]
+				else:
+					toppingInstance.texture = unlockedToppingsCup[topping]
+						
 func toppingInCup(cupPositon,newInstanceInCup):
 	toppingFollowCup = true
 	toppingFollowMouse = false		
