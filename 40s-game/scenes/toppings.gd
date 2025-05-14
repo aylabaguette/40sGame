@@ -45,6 +45,7 @@ var totalToppings = []
 var unlockedToppingsCup = [LYCHEE_JELLY_CUP,COCONUT_JELLY_CUP,MANGO_POPPING_CUP,MILK_FOAM_CUP,RED_BEAN_CUP,TAPIOCA_CUP,POPPING_PEARL_CUP]
 var totalToppingsCup = []
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.toppingInCup.connect(toppingInCup)
@@ -52,6 +53,9 @@ func _ready() -> void:
 	#initialize topping array w sprites
 	#very important for this to be here don't move it!
 	unlockedToppings = [lychee_jelly,coconut_jelly,mango_popping,milk_foam,red_bean,tapioca,popping_pearls]
+	
+	# Set the global unlocked drinks array
+	SignalBus.unlockedToppings = unlockedToppings
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -43,8 +43,7 @@ func _ready() -> void:
 	SignalBus.levelledUp.connect(onLevelUp)
 
 	
-	# Set the global unlocked toppings array
-	SignalBus.unlockedToppings = unlockedToppings
+	# Set the global unlocked drinks array
 	SignalBus.unlockedDrinks = unlockedDrinks
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
