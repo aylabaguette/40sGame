@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c8tsmx6qthl1" path="res://sprites/kitchen/toppings - dispenser/coffee.PNG" id="5_cj8jx"]
 [ext_resource type="Texture2D" uid="uid://dudmdjilkh1qy" path="res://sprites/kitchen/Lid (drag).PNG" id="5_o883t"]
 [ext_resource type="Texture2D" uid="uid://csy775ati26k7" path="res://sprites/kitchen/Menu.PNG" id="6_aoept"]
-[ext_resource type="Script" uid="uid://b732n5m62spm2" path="res://scripts/drinks.gd" id="7_vqlel"]
+[ext_resource type="Script" uid="uid://pbprlpxp7iar" path="res://scripts/drinks.gd" id="7_vqlel"]
 [ext_resource type="Script" uid="uid://5sjfs3cflqf5" path="res://scenes/lids.gd" id="8_xvu6a"]
 [ext_resource type="Texture2D" uid="uid://bj0vn7axdv5o3" path="res://sprites/cups/cup.png" id="10_uhls2"]
 [ext_resource type="Script" uid="uid://dkfjr81i6utt3" path="res://scenes/cup.gd" id="11_7e8gx"]
