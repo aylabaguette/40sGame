@@ -12,8 +12,11 @@ config_version=5
 
 config/name="40S game"
 run/main_scene="res://scenes/main.tscn"
+<<<<<<< Updated upstream
 config/features=PackedStringArray("4.3", "Forward Plus")
 main_scene="res://scenes/main.tscn"
+=======
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
