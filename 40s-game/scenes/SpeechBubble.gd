@@ -3,6 +3,7 @@ extends Node2D
 @onready var label: Label = $Panel/Label # Reference to the Label node
 @onready var speechBubble: Node2D = $"."
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var message = "Order Here?!"
