@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvwbu8mhrtq6d"
-path="res://.godot/imported/matchLiquid.png-a72196cbd0352f0511418c5fcfd0251a.ctex"
+uid="uid://csab3c65da51e"
+path="res://.godot/imported/mango popping bubbles.PNG-555f1250ec518f6c5dbc23fb49e55af7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/kitchen/Liquid/matchLiquid.png"
-dest_files=["res://.godot/imported/matchLiquid.png-a72196cbd0352f0511418c5fcfd0251a.ctex"]
+source_file="res://sprites/kitchen/toppings - dispenser/toppings cup/mango popping bubbles.PNG"
+dest_files=["res://.godot/imported/mango popping bubbles.PNG-555f1250ec518f6c5dbc23fb49e55af7.ctex"]
 
 [params]
 
