@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://buyudqqe76oda" path="res://sprites/shop/Backdrop.png" id="1_72jb3"]
 [ext_resource type="Script" uid="uid://ddwte7fkvg3y2" path="res://scripts/shop.gd" id="1_v2lqu"]
 >>>>>>> Stashed changes
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_v2lqu"]
 [ext_resource type="Texture2D" uid="uid://dnw401aomiw14" path="res://sprites/shop/Counter.png" id="3_05b3x"]
 [ext_resource type="Texture2D" uid="uid://dau526nnbxysi" path="res://sprites/characters/Mabel.PNG" id="4_pv6g3"]
 [ext_resource type="Texture2D" uid="uid://clwfwiq2uw1vx" path="res://sprites/shop/Door.png" id="4_vcaxr"]
@@ -34,9 +35,14 @@ metadata/__load_path__ = "res://scenes/SpeechBubble.gd"
 [ext_resource type="Texture2D" path="res://sprites/kitchen/toppings - dispenser/mango.PNG" id="16_ne4h4"]
 [ext_resource type="Texture2D" path="res://sprites/kitchen/toppings - dispenser/matcha.PNG" id="17_kltm8"]
 [ext_resource type="Texture2D" path="res://sprites/kitchen/toppings - dispenser/passion fruit.PNG" id="18_5qwee"]
+[ext_resource type="Texture2D" uid="uid://c3a4tvsawi4av" path="res://sprites/kitchen/toppings - dispenser/brown sugar.PNG" id="13_5bvj0"]
+[ext_resource type="Texture2D" uid="uid://c8tsmx6qthl1" path="res://sprites/kitchen/toppings - dispenser/coffee.PNG" id="14_pfmin"]
+[ext_resource type="Texture2D" uid="uid://b4gveec0li0tx" path="res://sprites/kitchen/toppings - dispenser/lemon.PNG" id="15_xj4q6"]
+[ext_resource type="Texture2D" uid="uid://dpxcpgd6pleou" path="res://sprites/kitchen/toppings - dispenser/mango.PNG" id="16_ne4h4"]
+[ext_resource type="Texture2D" uid="uid://4iks0iarvwfd" path="res://sprites/kitchen/toppings - dispenser/matcha.PNG" id="17_kltm8"]
+[ext_resource type="Texture2D" uid="uid://blvflvhbpnfvf" path="res://sprites/kitchen/toppings - dispenser/passion fruit.PNG" id="18_5qwee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47hci"]
->>>>>>> Stashed changes
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_v2lqu")
