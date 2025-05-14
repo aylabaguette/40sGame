@@ -1,17 +1,17 @@
 [gd_scene load_steps=13 format=3 uid="uid://d7otfdihf1ee"]
 
 [ext_resource type="Texture2D" uid="uid://buyudqqe76oda" path="res://sprites/shop/Backdrop.png" id="1_72jb3"]
-[ext_resource type="Script" uid="uid://byvpd4ueiwvv6" path="res://scripts/shop.gd" id="1_v2lqu"]
+[ext_resource type="Script" uid="uid://dyqr8j8xehx3d" path="res://scripts/shop.gd" id="1_v2lqu"]
 [ext_resource type="Texture2D" uid="uid://dnw401aomiw14" path="res://sprites/shop/Counter.png" id="3_05b3x"]
 [ext_resource type="Texture2D" uid="uid://dau526nnbxysi" path="res://sprites/characters/Mabel.PNG" id="4_pv6g3"]
 [ext_resource type="Texture2D" uid="uid://clwfwiq2uw1vx" path="res://sprites/shop/Door.png" id="4_vcaxr"]
 [ext_resource type="Texture2D" uid="uid://cjrfunaxpsd1y" path="res://sprites/characters/Bob Ferguson.PNG" id="5_4gh6d"]
-[ext_resource type="Script" uid="uid://cx58opxew2k73" path="res://scenes/character.gd" id="5_w06dj"]
+[ext_resource type="Script" uid="uid://dnbmy5nivetmh" path="res://scenes/character.gd" id="5_w06dj"]
 [ext_resource type="Texture2D" uid="uid://226vmje5xdkf" path="res://sprites/characters/Momo.PNG" id="6_g3rx4"]
 [ext_resource type="Texture2D" uid="uid://cmiv2bwaym08k" path="res://sprites/characters/Kyrat.PNG" id="7_gso0l"]
 [ext_resource type="Texture2D" uid="uid://bb667n3dtoqd7" path="res://sprites/characters/Emily.PNG" id="8_77h1o"]
-[ext_resource type="Script" uid="uid://d333po21uk1g5" path="res://scripts/level.gd" id="10_wg3wp"]
-[ext_resource type="Script" uid="uid://cgyshuo1yjy8g" path="res://scenes/SpeechBubble.gd" id="12_lljb8"]
+[ext_resource type="Script" uid="uid://chxx3e8n3xwsh" path="res://scripts/level.gd" id="10_wg3wp"]
+[ext_resource type="Script" uid="uid://crskclqxeb2u1" path="res://scenes/SpeechBubble.gd" id="12_lljb8"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_v2lqu")
@@ -36,8 +36,9 @@ scale = Vector2(6.8, 6.8)
 texture = ExtResource("4_vcaxr")
 
 [node name="Counter" type="Sprite2D" parent="."]
+z_index = 1
 texture_filter = 1
-position = Vector2(444, 333)
+position = Vector2(444, 337)
 scale = Vector2(6.2, 6.2)
 texture = ExtResource("3_05b3x")
 
@@ -96,16 +97,68 @@ text = "Day X since opening!!"
 
 [node name="SpeechBubble" type="Node2D" parent="."]
 script = ExtResource("12_lljb8")
+characterManagerPath = NodePath("../Character sprites/character")
 
 [node name="Panel" type="Panel" parent="SpeechBubble"]
+visible = false
 offset_left = 438.0
 offset_top = 98.0
 offset_right = 747.0
 offset_bottom = 210.0
 
+[node name="image" type="TextureRect" parent="SpeechBubble/Panel"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = -7.0
+offset_right = 543.0
+offset_bottom = 205.0
+expand_mode = 3
+stretch_mode = 4
+
+[node name="image2" type="TextureRect" parent="SpeechBubble/Panel"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 27.0
+offset_right = 467.0
+offset_bottom = 239.0
+expand_mode = 3
+stretch_mode = 4
+
+[node name="image3" type="TextureRect" parent="SpeechBubble/Panel"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 64.0
+offset_right = 418.0
+offset_bottom = 276.0
+expand_mode = 3
+stretch_mode = 4
+
 [node name="Label" type="Label" parent="SpeechBubble/Panel"]
 layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
 offset_right = 308.0
-offset_bottom = 111.0
+offset_bottom = 26.0
+
+[node name="Label2" type="Label" parent="SpeechBubble/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 44.0
+offset_bottom = 59.0
+
+[node name="Label3" type="Label" parent="SpeechBubble/Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 62.0
+offset_right = 43.0
+offset_bottom = 85.0
+
+[node name="Label4" type="Label" parent="SpeechBubble/Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 87.0
+offset_right = 42.0
+offset_bottom = 110.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
