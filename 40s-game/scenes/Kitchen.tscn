@@ -256,9 +256,15 @@ region_rect = Rect2(237, 0, 187, 237)
 position = Vector2(-5, -26)
 shape = SubResource("RectangleShape2D_lrmha")
 
+[node name="resetButton" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 19.0
+offset_right = 22.0
+offset_bottom = 27.0
+
 [node name="toppingDrag" type="Sprite2D" parent="." groups=["topping"]]
 texture_filter = 3
-scale = Vector2(5, 5)
+scale = Vector2(3, 3)
 
 [node name="Area2D" type="Area2D" parent="toppingDrag" groups=["topping"]]
 
