@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://gkkp38x5uoh5"]
+[gd_scene load_steps=33 format=3 uid="uid://5a2ft40gu63f"]
 
 [ext_resource type="Script" path="res://scripts/kitchen.gd" id="1_wjto4"]
 [ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scenes/lids.gd" id="8_xvu6a"]
 [ext_resource type="Texture2D" uid="uid://bj0vn7axdv5o3" path="res://sprites/cups/cup.png" id="10_uhls2"]
 [ext_resource type="Script" path="res://scenes/cup.gd" id="11_7e8gx"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" path="res://sprites/kitchen/Liquid/coffeeLiquid.png" id="12_4y6ao"]
 [ext_resource type="Script" path="res://scenes/toppings.gd" id="13_istqb"]
 [ext_resource type="Texture2D" path="res://sprites/kitchen/toppings - dispenser/toppings cup/lychee jelly.PNG" id="13_pi83e"]
@@ -21,6 +22,17 @@
 [ext_resource type="Texture2D" path="res://sprites/kitchen/toppings - dispenser/toppings cup/red bean.PNG" id="17_eb0qg"]
 [ext_resource type="Texture2D" path="res://sprites/kitchen/toppings - dispenser/toppings cup/tapioca.PNG" id="18_qbm8p"]
 [ext_resource type="Texture2D" path="res://sprites/kitchen/toppings - dispenser/toppings cup/popping pearls.PNG" id="19_1kvis"]
+=======
+[ext_resource type="Texture2D" uid="uid://wrxsbrjcan1h" path="res://sprites/kitchen/Liquid/coffeeLiquid.png" id="12_4y6ao"]
+[ext_resource type="Script" path="res://scenes/toppings.gd" id="13_istqb"]
+[ext_resource type="Texture2D" uid="uid://dn6tn7lyu8nvc" path="res://sprites/kitchen/toppings - dispenser/toppings cup/lychee jelly.PNG" id="13_pi83e"]
+[ext_resource type="Texture2D" uid="uid://bvyj5f3m1sdyj" path="res://sprites/kitchen/toppings - dispenser/toppings cup/coconut jelly.PNG" id="14_cqwg7"]
+[ext_resource type="Texture2D" uid="uid://csab3c65da51e" path="res://sprites/kitchen/toppings - dispenser/toppings cup/mango popping bubbles.PNG" id="15_y16n4"]
+[ext_resource type="Texture2D" uid="uid://5mav7dpqxfr6" path="res://sprites/kitchen/toppings - dispenser/toppings cup/milk foam.PNG" id="16_ljgct"]
+[ext_resource type="Texture2D" uid="uid://bumdj0sdq4kds" path="res://sprites/kitchen/toppings - dispenser/toppings cup/red bean.PNG" id="17_eb0qg"]
+[ext_resource type="Texture2D" uid="uid://cry2qt56q6pm" path="res://sprites/kitchen/toppings - dispenser/toppings cup/tapioca.PNG" id="18_qbm8p"]
+[ext_resource type="Texture2D" uid="uid://dmgedf7a7ef16" path="res://sprites/kitchen/toppings - dispenser/toppings cup/popping pearls.PNG" id="19_1kvis"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvqij"]
 size = Vector2(111, 145)

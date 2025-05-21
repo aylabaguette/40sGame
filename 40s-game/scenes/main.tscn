@@ -1,6 +1,10 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://hbo1e1253o33"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://bytyeelu5072c"]
+>>>>>>> Stashed changes
 
-[ext_resource type="PackedScene" uid="uid://gkkp38x5uoh5" path="res://scenes/Kitchen.tscn" id="1_o38w6"]
+[ext_resource type="PackedScene" uid="uid://5a2ft40gu63f" path="res://scenes/Kitchen.tscn" id="1_o38w6"]
 [ext_resource type="PackedScene" uid="uid://d7otfdihf1ee" path="res://scenes/Shop.tscn" id="2_gyjwt"]
 
 [node name="Main" type="Node2D"]
