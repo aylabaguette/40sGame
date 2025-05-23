@@ -1,0 +1,284 @@
+[gd_scene load_steps=33 format=3 uid="uid://gkkp38x5uoh5"]
+
+[ext_resource type="Script" uid="uid://c4jye0n3lg0em" path="res://scripts/kitchen.gd" id="1_wjto4"]
+[ext_resource type="Texture2D" uid="uid://c8k4vsh2wjb2f" path="res://sprites/kitchen/Backdrop.PNG" id="2_0786h"]
+[ext_resource type="Texture2D" uid="uid://br7c6mch33g2a" path="res://sprites/kitchen/Dispenser.PNG" id="3_igrlo"]
+[ext_resource type="Texture2D" uid="uid://dqrfyppmuq80u" path="res://sprites/kitchen/Lids.PNG" id="4_c85uw"]
+[ext_resource type="Script" uid="uid://cscxlkvqccfas" path="res://scripts/dispenser.gd" id="5_bdred"]
+[ext_resource type="Texture2D" uid="uid://c8tsmx6qthl1" path="res://sprites/kitchen/toppings - dispenser/coffee.PNG" id="5_cj8jx"]
+[ext_resource type="Texture2D" uid="uid://dudmdjilkh1qy" path="res://sprites/kitchen/Lid (drag).PNG" id="5_o883t"]
+[ext_resource type="Texture2D" uid="uid://csy775ati26k7" path="res://sprites/kitchen/Menu.PNG" id="6_aoept"]
+[ext_resource type="Script" uid="uid://d4kdsn8h2nq1e" path="res://scripts/drinks.gd" id="7_vqlel"]
+[ext_resource type="Script" uid="uid://5sjfs3cflqf5" path="res://scenes/lids.gd" id="8_xvu6a"]
+[ext_resource type="Texture2D" uid="uid://bj0vn7axdv5o3" path="res://sprites/cups/cup.png" id="10_uhls2"]
+[ext_resource type="Script" uid="uid://dkfjr81i6utt3" path="res://scenes/cup.gd" id="11_7e8gx"]
+[ext_resource type="Texture2D" uid="uid://wrxsbrjcan1h" path="res://sprites/kitchen/Liquid/coffeeLiquid.png" id="12_4y6ao"]
+[ext_resource type="Script" uid="uid://2gbh1lrvrqxx" path="res://scenes/toppings.gd" id="13_istqb"]
+[ext_resource type="Texture2D" uid="uid://dn6tn7lyu8nvc" path="res://sprites/kitchen/toppings - dispenser/toppings cup/lychee jelly.PNG" id="13_pi83e"]
+[ext_resource type="Texture2D" uid="uid://bvyj5f3m1sdyj" path="res://sprites/kitchen/toppings - dispenser/toppings cup/coconut jelly.PNG" id="14_cqwg7"]
+[ext_resource type="Texture2D" uid="uid://csab3c65da51e" path="res://sprites/kitchen/toppings - dispenser/toppings cup/mango popping bubbles.PNG" id="15_y16n4"]
+[ext_resource type="Texture2D" uid="uid://5mav7dpqxfr6" path="res://sprites/kitchen/toppings - dispenser/toppings cup/milk foam.PNG" id="16_ljgct"]
+[ext_resource type="Texture2D" uid="uid://bumdj0sdq4kds" path="res://sprites/kitchen/toppings - dispenser/toppings cup/red bean.PNG" id="17_eb0qg"]
+[ext_resource type="Texture2D" uid="uid://cry2qt56q6pm" path="res://sprites/kitchen/toppings - dispenser/toppings cup/tapioca.PNG" id="18_qbm8p"]
+[ext_resource type="Texture2D" uid="uid://dmgedf7a7ef16" path="res://sprites/kitchen/toppings - dispenser/toppings cup/popping pearls.PNG" id="19_1kvis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvqij"]
+size = Vector2(111, 145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bv3je"]
+size = Vector2(388.75, 358.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kppjn"]
+size = Vector2(14.3677, 13.7383)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_toktr"]
+size = Vector2(106, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4mlr"]
+size = Vector2(218.368, 175.51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_holuh"]
+size = Vector2(141.818, 154.545)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tnvg"]
+size = Vector2(188.235, 169.706)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u3d2"]
+size = Vector2(140, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8skg"]
+size = Vector2(147.17, 150.943)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrmha"]
+size = Vector2(118, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwgv8"]
+
+[node name="Kitchen" type="Node2D"]
+script = ExtResource("1_wjto4")
+
+[node name="Backgound kitchen" type="Sprite2D" parent="."]
+position = Vector2(408, 321)
+scale = Vector2(0.422083, 0.4)
+texture = ExtResource("2_0786h")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 19.0
+offset_right = 142.0
+offset_bottom = 127.0
+text = "SWITCH SCENE"
+
+[node name="Lid(drag)" type="Sprite2D" parent="."]
+position = Vector2(52, 283)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_o883t")
+region_enabled = true
+region_rect = Rect2(480, 1132, 388, 258)
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(416, 349)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("6_aoept")
+
+[node name="Dispenser" type="Node2D" parent="."]
+script = ExtResource("5_bdred")
+
+[node name="Dispenser" type="Sprite2D" parent="Dispenser"]
+position = Vector2(423, 323)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("3_igrlo")
+
+[node name="Drink Option" type="Sprite2D" parent="Dispenser/Dispenser"]
+position = Vector2(919.512, 490.244)
+scale = Vector2(0.585366, 0.585366)
+texture = ExtResource("5_cj8jx")
+
+[node name="Rightbutton" type="Button" parent="Dispenser"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 734.0
+offset_top = 351.0
+offset_right = 772.0
+offset_bottom = 393.0
+
+[node name="DispenseButton" type="Button" parent="Dispenser"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 660.0
+offset_top = 344.0
+offset_right = 722.0
+offset_bottom = 398.0
+
+[node name="LeftButton" type="Button" parent="Dispenser"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 608.0
+offset_top = 350.0
+offset_right = 653.0
+offset_bottom = 393.0
+
+[node name="DispenserArea" type="Area2D" parent="Dispenser"]
+position = Vector2(608, 350)
+
+[node name="DispenserShape" type="CollisionShape2D" parent="Dispenser/DispenserArea"]
+position = Vector2(84.5, 181.5)
+shape = SubResource("RectangleShape2D_cvqij")
+
+[node name="Lids" type="Area2D" parent="."]
+position = Vector2(386, 322)
+scale = Vector2(0.4, 0.4)
+script = ExtResource("8_xvu6a")
+
+[node name="Lids" type="Sprite2D" parent="Lids"]
+texture = ExtResource("4_c85uw")
+
+[node name="Button" type="Button" parent="Lids"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -847.0
+offset_top = 393.0
+offset_right = -580.0
+offset_bottom = 739.0
+
+[node name="Lids Shape" type="CollisionShape2D" parent="Lids"]
+position = Vector2(-709.375, 565.625)
+shape = SubResource("RectangleShape2D_bv3je")
+
+[node name="Drinks" type="Sprite2D" parent="."]
+script = ExtResource("7_vqlel")
+
+[node name="Cup" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(320.8, 513.75)
+scale = Vector2(8.01333, 8.025)
+texture = ExtResource("10_uhls2")
+script = ExtResource("11_7e8gx")
+
+[node name="Area2DCup" type="Area2D" parent="Cup" groups=["cup"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cup/Area2DCup"]
+position = Vector2(-0.669716, 5.49844)
+shape = SubResource("RectangleShape2D_kppjn")
+
+[node name="drinkLiquid" type="Sprite2D" parent="Cup"]
+visible = false
+modulate = Color(1, 0.952941, 1, 1)
+texture = ExtResource("12_4y6ao")
+
+[node name="toppings cups" type="Node2D" parent="."]
+script = ExtResource("13_istqb")
+
+[node name="lychee jelly" type="Sprite2D" parent="toppings cups"]
+position = Vector2(640, 183)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_pi83e")
+region_enabled = true
+region_rect = Rect2(229, -19, 218, 245)
+
+[node name="ArealycheeJelly" type="Area2D" parent="toppings cups/lychee jelly"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toppings cups/lychee jelly/ArealycheeJelly"]
+position = Vector2(-11, -18)
+shape = SubResource("RectangleShape2D_toktr")
+
+[node name="coconut jelly" type="Sprite2D" parent="toppings cups"]
+position = Vector2(519, 176)
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("14_cqwg7")
+region_enabled = true
+region_rect = Rect2(-21, -9, 235, 213)
+
+[node name="Areacoconut" type="Area2D" parent="toppings cups/coconut jelly"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toppings cups/coconut jelly/Areacoconut"]
+position = Vector2(-11.2247, 6.1225)
+shape = SubResource("RectangleShape2D_b4mlr")
+
+[node name="mango popping" type="Sprite2D" parent="toppings cups"]
+position = Vector2(647, 53)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("15_y16n4")
+region_enabled = true
+region_rect = Rect2(436, 0, 200, 221)
+
+[node name="AreaMango" type="Area2D" parent="toppings cups/mango popping"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toppings cups/mango popping/AreaMango"]
+position = Vector2(16.3635, 2.72727)
+shape = SubResource("RectangleShape2D_holuh")
+
+[node name="milk foam" type="Sprite2D" parent="toppings cups"]
+position = Vector2(559, 64)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("16_ljgct")
+region_enabled = true
+region_rect = Rect2(0, 0, 215, 241)
+
+[node name="AreamilkFoam" type="Area2D" parent="toppings cups/milk foam"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toppings cups/milk foam/AreamilkFoam"]
+position = Vector2(-7.84314, -19.0686)
+shape = SubResource("RectangleShape2D_8tnvg")
+
+[node name="red bean" type="Sprite2D" parent="toppings cups"]
+position = Vector2(402, 190)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_eb0qg")
+region_enabled = true
+region_rect = Rect2(445, 0, 239, 237)
+
+[node name="ArearedBean" type="Area2D" parent="toppings cups/red bean"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toppings cups/red bean/ArearedBean"]
+position = Vector2(-12, -7)
+shape = SubResource("RectangleShape2D_6u3d2")
+
+[node name="tapioca" type="Sprite2D" parent="toppings cups"]
+position = Vector2(350, 65)
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("18_qbm8p")
+region_enabled = true
+region_rect = Rect2(446, 0, 223, 257)
+
+[node name="AreaTapioca" type="Area2D" parent="toppings cups/tapioca"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toppings cups/tapioca/AreaTapioca"]
+position = Vector2(-5.66034, -15.0944)
+shape = SubResource("RectangleShape2D_g8skg")
+
+[node name="popping pearls" type="Sprite2D" parent="toppings cups"]
+position = Vector2(453, 63)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_1kvis")
+region_enabled = true
+region_rect = Rect2(237, 0, 187, 237)
+
+[node name="Areapopping" type="Area2D" parent="toppings cups/popping pearls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toppings cups/popping pearls/Areapopping"]
+position = Vector2(-5, -26)
+shape = SubResource("RectangleShape2D_lrmha")
+
+[node name="resetButton" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 19.0
+offset_right = 22.0
+offset_bottom = 27.0
+
+[node name="toppingDrag" type="Sprite2D" parent="." groups=["topping"]]
+texture_filter = 3
+scale = Vector2(3, 3)
+
+[node name="Area2D" type="Area2D" parent="toppingDrag" groups=["topping"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toppingDrag/Area2D"]
+shape = SubResource("RectangleShape2D_jwgv8")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Dispenser/Rightbutton" to="Dispenser" method="_on_rightbutton_pressed"]
+[connection signal="pressed" from="Dispenser/DispenseButton" to="Dispenser" method="_on_dispense_button_pressed"]
+[connection signal="pressed" from="Dispenser/LeftButton" to="Dispenser" method="_on_left_button_pressed"]
+[connection signal="area_entered" from="Dispenser/DispenserArea" to="Dispenser" method="_on_dispenser_area_area_entered"]
+[connection signal="area_exited" from="Dispenser/DispenserArea" to="Dispenser" method="_on_dispenser_area_area_exited"]
+[connection signal="pressed" from="Lids/Button" to="Lids" method="_on_button_pressed"]
+[connection signal="area_entered" from="Cup/Area2DCup" to="Cup" method="_on_area_2d_cup_area_entered"]
+[connection signal="mouse_entered" from="Cup/Area2DCup" to="Cup" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Cup/Area2DCup" to="Cup" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="toppings cups/lychee jelly/ArealycheeJelly" to="toppings cups" method="_on_arealychee_jelly_mouse_entered"]
