@@ -87,8 +87,8 @@ func _input(event: InputEvent) -> void:
 	#for loop that loops through array of toppings
 	if(Input.is_action_just_pressed("mouse click")):
 		for topping in range(unlockedToppings.size()):
-			var currentTopping = unlockedToppingsSprites[topping]
-
+			var currentTopping
+			currentTopping = unlockedToppingsSprites[topping]
 			var mousePos = get_global_mouse_position()
 			#gets mouse position local to specific sprite looking at
 			var local_mouse_pos = currentTopping.to_local(mousePos)

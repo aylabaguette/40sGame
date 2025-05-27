@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 		cup.position = get_global_mouse_position()
 		
 	if(toppingInCup || newInstanceInCup):
-		#print(newInstanceInCup)
+		print(newInstanceInCup)
 		var cupPosition = cup.position
 		SignalBus.toppingInCup.emit(cupPosition,newInstanceInCup)
 	
