@@ -45,15 +45,27 @@ var totalToppings = []
 var unlockedToppingsCup = [LYCHEE_JELLY_CUP,COCONUT_JELLY_CUP,MANGO_POPPING_CUP,MILK_FOAM_CUP,RED_BEAN_CUP,TAPIOCA_CUP,POPPING_PEARL_CUP]
 var totalToppingsCup = []
 
+var unlockedToppingsSprites = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.toppingInCup.connect(toppingInCup)
 		
+		
+		# Store the real Sprite2Ds for local use (mouse input)
+	unlockedToppingsSprites = [lychee_jelly, coconut_jelly, mango_popping, milk_foam, red_bean, tapioca, popping_pearls]
+	
+	# Store just the texture paths for the global use
+	unlockedToppings = []
+	for topping in unlockedToppingsSprites:
+		unlockedToppings.append(topping.texture.resource_path)
+
+	
 	#initialize topping array w sprites
 	#very important for this to be here don't move it!
-	unlockedToppings = [lychee_jelly,coconut_jelly,mango_popping,milk_foam,red_bean,tapioca,popping_pearls]
+	#unlockedToppings = [lychee_jelly,coconut_jelly,mango_popping,milk_foam,red_bean,tapioca,popping_pearls]
 	
+
 	# Set the global unlocked drinks array
 	SignalBus.unlockedToppings = unlockedToppings
 	
@@ -74,9 +86,12 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	#for loop that loops through array of toppings
 	if(Input.is_action_just_pressed("mouse click")):
-		for topping in range(unlockedToppings.size()):
-			var currentTopping
-			currentTopping = unlockedToppings[topping]
+		#for topping in range(unlockedToppings.size()):
+			#var currentTopping
+			#currentTopping = unlockedToppings[topping]
+		for topping in range(unlockedToppingsSprites.size()):
+			var currentTopping = unlockedToppingsSprites[topping]
+
 			var mousePos = get_global_mouse_position()
 			#gets mouse position local to specific sprite looking at
 			var local_mouse_pos = currentTopping.to_local(mousePos)

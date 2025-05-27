@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://226vmje5xdkf" path="res://sprites/characters/Momo.PNG" id="6_g3rx4"]
 [ext_resource type="Texture2D" uid="uid://cmiv2bwaym08k" path="res://sprites/characters/Kyrat.PNG" id="7_gso0l"]
 [ext_resource type="Texture2D" uid="uid://bb667n3dtoqd7" path="res://sprites/characters/Emily.PNG" id="8_77h1o"]
-[ext_resource type="Script" uid="uid://chxx3e8n3xwsh" path="res://scripts/level.gd" id="10_wg3wp"]
+[ext_resource type="Script" uid="uid://d333po21uk1g5" path="res://scripts/level.gd" id="10_wg3wp"]
 [ext_resource type="Script" uid="uid://crskclqxeb2u1" path="res://scenes/SpeechBubble.gd" id="12_lljb8"]
 
 [node name="Shop" type="Node2D"]
@@ -46,6 +46,8 @@ texture = ExtResource("3_05b3x")
 
 [node name="character" type="Node2D" parent="Character sprites"]
 script = ExtResource("5_w06dj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Character sprites/character"]
 
 [node name="Emily" type="Sprite2D" parent="Character sprites"]
 visible = false
