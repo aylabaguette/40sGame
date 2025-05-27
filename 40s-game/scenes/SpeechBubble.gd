@@ -81,42 +81,49 @@ func setBubble(image_path: String, image_path2: String, image_path3: String, ord
 	await get_tree().create_timer(1).timeout
 
 	label4.text = order4
-
 func showSpeechBubble():
 	var toppings_array = SignalBus.unlockedToppings.duplicate()
 	toppings_array.shuffle()
 	
 	if toppings_array.size() < 2:
-		push_error("Not enough toppings unlocked to show two random toppings.")
+		push_error("❌ Not enough toppings unlocked to show two random toppings.")
 		return
 	
-	# Pick two random topping texture paths
 	var toppingSelected = toppings_array[0]
 	var toppingSelected2 = toppings_array[1]
 	
-	# Debug prints to confirm random selection
-	print("Random Topping 1 Selected: ", toppingSelected)
-	print("Random Topping 2 Selected: ", toppingSelected2)
+	# ✅ Randomize flavour from unlocked drinks
+	var drinks_array = SignalBus.unlockedDrinks.duplicate()
+	drinks_array.shuffle()
 	
-	# Hardcoded flavor
-	var flavourSelected = "res://sprites/kitchen/toppings - dispenser/lemon.PNG"
-	print("Flavour Selected: ", flavourSelected)
+	if drinks_array.size() < 1:
+		push_error("❌ No drinks unlocked.")
+		return
 	
-	# Get names
+	var flavourSelected = drinks_array[0]
+
+	# ✅ Debug prints
+	print("🥤 Random Flavour Selected: ", flavourSelected)
+	print("🍧 Topping 1 Selected: ", toppingSelected)
+	print("🍧 Topping 2 Selected: ", toppingSelected2)
+	
+	# Get file names from paths
 	var topping1Name = getName(toppingSelected)
 	var topping2Name = getName(toppingSelected2)
-	var flavourName = getName(flavourSelected)
+	var flavourName = getName(flavourSelected.resource_path)
+
 	
 	var message1 = "I would like to order " + flavourName
 	var message2 = " with " + topping1Name
 	var message3 = " and " + topping2Name
 	var message4 = " please!"
 	
-	# Print out full message (for extra debugging clarity)
-	print("Full Message: ", message1, " ", message2, " ", message3, " ", message4)
+	# Print final message
+	print("🗨️ Full Message: ", message1, " ", message2, " ", message3, " ", message4)
 	
-	setBubble(flavourSelected, toppingSelected, toppingSelected2, message1, message2, message3, message4)
+	setBubble(flavourSelected.resource_path, toppingSelected, toppingSelected2, message1, message2, message3, message4)
 	panel.visible = true
+
 
 
 
