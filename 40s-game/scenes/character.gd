@@ -16,19 +16,6 @@ signal characterEntered
 func _ready() -> void: 
 	randomCharacter()
 
-	print("🚶 Character ready — walking in")
-	characterWalkIn()
-	
-func characterWalkIn():
-	print("🎬 Playing walk_in animation...")
-	if animation_player.has_animation("walk_in"):
-		animation_player.play("walk_in")
-		await animation_player.animation_finished
-	else:
-		print("⚠️ No 'walk_in' animation found — skipping")
-		await get_tree().create_timer(1).timeout # fallback
-	print("✅ Emitting characterEntered")
-	emit_signal("characterEntered")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -67,6 +54,7 @@ func randomCharacter():
 	
 	#"calls back" to the character entering and that it has happened
 	tween.tween_callback(Callable(self, "onCharacterEntered"))
+	
 
 func onCharacterEntered():
 	#sends the signal!!
