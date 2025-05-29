@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d7otfdihf1ee"]
+[gd_scene load_steps=13 format=3 uid="uid://d7otfdihf1ee"]
 
 [ext_resource type="Texture2D" uid="uid://buyudqqe76oda" path="res://sprites/shop/Backdrop.png" id="1_72jb3"]
 [ext_resource type="Script" uid="uid://dyqr8j8xehx3d" path="res://scripts/shop.gd" id="1_v2lqu"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bb667n3dtoqd7" path="res://sprites/characters/Emily.PNG" id="8_77h1o"]
 [ext_resource type="Script" uid="uid://d333po21uk1g5" path="res://scripts/level.gd" id="10_wg3wp"]
 [ext_resource type="Script" uid="uid://crskclqxeb2u1" path="res://scenes/SpeechBubble.gd" id="12_lljb8"]
-[ext_resource type="Script" uid="uid://dmsxobmgrmo4q" path="res://scenes/panel.gd" id="13_hd80v"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_v2lqu")
@@ -102,11 +101,10 @@ characterManagerPath = NodePath("../Character sprites/character")
 
 [node name="Panel" type="Panel" parent="SpeechBubble"]
 visible = false
-offset_left = 505.0
-offset_top = 97.0
-offset_right = 778.0
+offset_left = 438.0
+offset_top = 98.0
+offset_right = 747.0
 offset_bottom = 210.0
-script = ExtResource("13_hd80v")
 
 [node name="image" type="TextureRect" parent="SpeechBubble/Panel"]
 layout_mode = 0
@@ -137,7 +135,7 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="SpeechBubble/Panel"]
 layout_mode = 0
-offset_left = 11.0
+offset_left = 1.0
 offset_top = 2.0
 offset_right = 308.0
 offset_bottom = 26.0
